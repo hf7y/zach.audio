@@ -1,0 +1,40 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio">bio</a></li> 
+			<li><a href="/compositions">compositions</a></li> 
+			<!-- <li><a href="/sousaphone">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements">arrangements</a></li> -->
+			<!-- <li><a href="/band">string band</a></li> -->
+			<li><a href="/cv">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>Uplight test, Total Abstraction, 505 to 525 s of the draft cut</h1>
+<p>Before on the left, after on the right. Neutral white lift, gain 0.55, on the white-costumed dancers in the dark floor area.</p>
+<video controls preload="metadata" playsinline src="ab.mp4" style="width:100%;max-width:100%;background:#000;display:block"></video>
+<p><small>before (left) · after, neutral, gain 0.55 (right)</small></p>
+<table>
+<tr><th>dancer</th><th>Y before</th><th>Y after</th><th>lift, median</th><th>dropout frames</th></tr>
+<tr><td>seated, centre</td><td>53.2</td><td>64.8</td><td>11.6</td><td>0</td></tr>
+<tr><td>left, by the wall</td><td>57.6</td><td>74.9</td><td>17.6</td><td>0</td></tr>
+<tr><td>back left</td><td>58.1</td><td>74.7</td><td>17.3</td><td>58 (walks out of the fixed box)</td></tr>
+<tr><td>right, middle</td><td>51.6</td><td>66.5</td><td>15.4</td><td>0</td></tr>
+<tr><td>right, back</td><td>43.8</td><td>52.1</td><td>7.7</td><td>0</td></tr>
+<tr><td>right, nearest</td><td>49.9</td><td>62.5</td><td>13.3</td><td>0</td></tr>
+</table>
+<p><small>Measured 2026-11-21 with verify_encoded.py on the 1920×1080 render (0 to 255 scale). Walls and projection unchanged beyond encode noise. The lift follows the source brightness at about 1.3×, no independent pulse. This copy is re-encoded to 13 MB; the original render is on dexter at /mnt/d/siddhartha-raw-2023/uci-edit/uplight-test/.</small></p>
+<p><a href="/apply/">Apply page</a></p>
+</body>
+</html>
