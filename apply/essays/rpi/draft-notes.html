@@ -23,7 +23,7 @@
 	</nav>
 </header>
 	<h1>essays/rpi/draft-notes.md</h1>
-<p id=draft-note>Draft for auditing. Rendered from essays/rpi/draft-notes.md at 6b58340, 2026-11-25. Nothing here is submitted.</p>
+<p id=draft-note>Draft for auditing. Rendered from essays/rpi/draft-notes.md at 770b508, 2026-11-25. Nothing here is submitted.</p>
 <h2>Rensselaer Polytechnic Institute: notes on the first draft of both texts</h2>
 <p>Agent notes (2026-11-25, W-h1-27), not part of either text. <code>prose.md</code> holds only your sentences,
 copied whole and verbatim from the nodes named below (<code>present.</code> is vision/present.toml, <code>past.</code> is
@@ -35,21 +35,22 @@ whole sentence of the node cited for it, if a sentence appears in both texts, or
 runs over 1,300 words.</p>
 <p>Second pass (2026-11-25, h2-synth W-h2-22 and W-h2-21): whole-sentence reorders and one cut, below
 under "Second pass". Third pass (2026-11-25, h3-synth W-h3-09 and W-h3-05): one cut and one pull-in,
-below under "Third pass". The tables give the draft as it now stands.</p>
+below under "Third pass". Fourth pass (2026-11-25, h4-synth W-h4-01 and W-h4-04): one move and one
+pull-in, below under "Fourth pass". The tables give the draft as it now stands.</p>
 <h3>Two texts in one file</h3>
 <p>RPI asks for two texts (programs/rpi.toml <code>[prompts]</code>). check.py reads one prose.md, one paragraph
 per cluster marker, in outline order, so essay.toml maps each marker to one text and runs the
 outline text by text:</p>
 <pre>| text | prompt | markers | words | limit |
 |---|---|---|---|---|
-| `statement` | "Statement of Background and Goals" | s-01 to s-08 | 791 | none given (programs/rpi.toml `open`); the cut sheet aimed at 800 |
+| `statement` | "Statement of Background and Goals" | s-01 to s-08 | 819 | none given (programs/rpi.toml `open`); the cut sheet aimed at 800 |
 | `proposal` | "Research Proposal (up to 3 pages)" | p-00 to p-09 | 1,277 | 3 pages: about 2.5 pages single-spaced; held under 1,300 by the test |</pre>
 <p>Counts split on whitespace. The c-01 to c-10 clusters stay in essay.toml as the core-synced pool the
 worksheet and the cut sheet were built from; they are in no prompt and not in the outline. To paste
 into the portal: the statement is the s- paragraphs, the proposal the p- paragraphs; the markers
 are not pasted.</p>
 <h3>Paragraphs: the node of each sentence, in order</h3>
-<h4>Statement of Background and Goals (791 words)</h4>
+<h4>Statement of Background and Goals (819 words)</h4>
 <pre>| marker | role | words | sentences, in order |
 |---|---|---|---|
 | s-01 | background: training and practice | 144 | past.N042 ×2, essays/core/bio-candidates.md:62, past.N013, ans-175, ans-21 ×3 |
@@ -59,12 +60,12 @@ are not pasted.</p>
 | s-05 | background: the church | 77 | q8-open ×3, past.N077, q8-open |
 | s-06 | academic and research interests | 61 | ans-76, ans-111 ×3, ans-74 ×2 |
 | s-07 | future career goals | 57 | ans-59, ans-23 ×3, ans-56 |
-| s-08 | degree and fit: why a PhD, why leave | 103 | ans-07, ans-02, ans-101, q8-open, ans-05 ×2, ans-114 |</pre>
+| s-08 | degree and fit: why a PhD, why leave | 131 | ans-07, ans-02, ans-101, q8-open, ans-13, ans-05 ×2, ans-114 |</pre>
 <h4>Research Proposal (1,277 words)</h4>
 <pre>| marker | role | words | sentences, in order |
 |---|---|---|---|
-| p-00 | opening: the proposal sentence and the thesis line | 50 | ans-175, ans-174 ×2 |
-| p-01 | question | 120 | ans-99 ×7, ans-119 ×3 |
+| p-00 | opening: the proposal sentence | 18 | ans-175 |
+| p-01 | question; ends on the thesis line | 152 | ans-99 ×7, ans-119 ×3, ans-174 ×2 |
 | p-02 | problem and hypothesis | 243 | ans-128, ans-24, ans-86 ×2, ans-62 ×4, ans-63, ans-104 ×2, ans-136 ×3 |
 | p-03 | the model: the anthem, Eris, what it holds variable | 164 | ans-173 ×2, ans-180 ×4, ans-124 ×3, ans-137 ×2, ans-139 |
 | p-04 | method: the open performance | 162 | ans-158 ×2, ans-142 ×3, ans-120 ×2, ans-142 ×4, ans-144 ×2, ans-142 |
@@ -110,8 +111,31 @@ signal processing and composition." (essays/core/bio-candidates.md:62, your NSEM
 hf7y-estate/candidature texts/nseme-bio-2018.md:7) now stands directly before "With Prof. Ueno,
 ...", as in UCI and UVA. The judge's reason (h3 L1 reader, 18): "First mention; nothing before
 says he studied at Berkeley". 127 → 144 words; the statement 777 → 791.</li></ul>
-<h3>Third pass (2026-11-25, h3-synth W-h3-11): the thesis line follows the definition of the anthem: not moved</h3>
-<p>Nothing moved. The h3 synthesis lists RPI, but the RPI proposal no longer carries "The object of study is the anthem which is communication of an identity through performance." (ans-119): it is on essays/rpi/cut.md, so there is no definition for the thesis line to follow. And the thesis line opens the proposal on purpose: p-00 (the proposal sentence and both sentences of the thesis line, as typed) was set by the second pass (W-h2-22) so that "the proposal" does not begin mid-thought. Moving it would undo that ruling, and the h3 synthesis says to leave RPI where the move would break it. If you want the anthem defined before p-00, that is a pull-in of ans-119 and a decision on the opening, yours.</p>
+<h3>Third pass (2026-11-25, h3-synth W-h3-11): the thesis line follows the definition of the anthem: not moved then</h3>
+<p>Nothing moved in the third pass, for a reason that was false. This note said the RPI proposal no
+longer carried "The object of study is the anthem which is communication of an identity through
+performance." (ans-119) and that it was on essays/rpi/cut.md. It was not cut: it stood in p-01 the
+whole time (the p-01 row above has cited "ans-119 ×3" since the first draft). The fourth pass makes
+the move (below).</p>
+<h3>Fourth pass (2026-11-25): one move, one pull-in</h3>
+<ul><li><strong>p-00 to p-01, the thesis line moved (W-h4-01).</strong> The thesis line (ans-174, both sentences, as
+typed: lowercase, "notation is produces", no full stop) moved whole from p-00 to the end of p-01,
+directly after "The object of study is the anthem which is communication of an identity through
+performance." (ans-119) and the two ans-119 sentences that follow it. The judge's reason (h4 L2
+reader, item 3): "'I'm investigating... professionals teach amateurs the anthem' before 'The
+object of study is the anthem' in the next paragraph | the fault fixed in the other six drafts is
+still in RPI. The commit note is wrong." p-00 keeps the proposal sentence (ans-175) alone, so the
+proposal still opens on it, which was the second pass's reason (W-h2-22). The thesis line has no
+full stop, so it still ends its paragraph. p-00 50 → 18 words, p-01 120 → 152; the proposal stays
+1,277.</li><li><strong>s-08, pull-in (W-h4-04).</strong> "From New Orleans, I understand that the work should be deeply
+embedded in community such that the makers and the patrons are all invested collectively in the
+expression." (ans-13, vision/present.toml) now stands directly before "I need to figure out what
+elements of my theory are place specific, and which ones are transposable." (ans-05), the order
+Chicago, Harvard, Brown and UVA use. The judge's reason (h4 L2 reader, item 7): "'Leaving here is
+essential...' / 'I will continue to come back for ritual loops like Carnival.' | New Orleans is
+never named in either text. 'here' and 'Carnival' have no antecedent." s-08 103 → 131 words; the
+statement 791 → 819 (the test holds it between 600 and 1,000). The proposal's p-08 already uses a
+different sentence of ans-13 ("Siddhartha was a good premise, ..."); no sentence is in both texts.</li></ul>
 <h3>Gaps: what no sentence of yours answers</h3>
 <ul><li><strong>Why RPI.</strong> Neither text names RPI, Rensselaer, Electronic Arts, EMPAC or Troy; check.py warns
 on it. No sentence of yours names any of them.</li><li><strong>Who you would study with.</strong> No sentence names Matthew Goodheart, Rob Hamilton, Igor Vamos or
@@ -164,9 +188,10 @@ where you studied, with your 2018 bio sentence on the B.A.)</li><li>Q: On the an
 social function through the motivation of identification." You later wrote "The identity exists
 before the anthem." Which one stays?</li><li>Q: Ken (the anthem paragraph), Abe (the Vaporwave sentence) and "the krewe" in the Rick Snow
 sentence (Vaporwave, though the reader meets Eris next) arrive unexplained. Who are they, in a
-clause? And should "Brown's flow chart" name the book?</li><li>E: Your thesis sentence now opens the proposal, as its own short paragraph after the proposal
-sentence, as you typed it: lowercase, "notation
-is produces", no full stop. Keep it that way here?</li><li>E: The proposal is 1,277 words, about two and a half pages single-spaced. Double-spaced, it must
+clause? And should "Brown's flow chart" name the book?</li><li>E: Your thesis sentence now ends the proposal's second paragraph, right after "The object of
+study is the anthem which is communication of an identity through performance.", as you typed it:
+lowercase, "notation is produces", no full stop. The proposal opens on "I'm investigating how to
+use a team of professionals ..." alone. Keep it that way here?</li><li>E: The proposal is 1,277 words, about two and a half pages single-spaced. Double-spaced, it must
 lose about 500 words. Which spacing?</li><li>E: Read both texts start to finish. Does the order carry, and what would you put back from the cut
 list?</li><li>E: The proposal had two sentences that begin "The model is": one says the model is the anthem
 ("prime reference is Anthem for Eris"), the other that it is a blend of devised work and notated
