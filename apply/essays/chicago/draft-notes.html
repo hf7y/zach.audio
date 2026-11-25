@@ -1,0 +1,97 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>essays/chicago/draft-notes.md</h1>
+<p id=draft-note>Draft for auditing. Rendered from essays/chicago/draft-notes.md at uncommitted, 2026-11-25. Nothing here is submitted.</p>
+<h2>University of Chicago: notes on the first statement draft</h2>
+<p>Agent notes (2026-11-25), not part of the statement. <code>prose.md</code> holds only your sentences, copied
+whole and verbatim from the nodes named below (<code>present.</code> is vision/present.toml, <code>past.</code> is
+vision/past.toml). The agent chose which sentences, their order and the cuts; it wrote none of
+them. <code>tests/test_chicago_essay.py</code> walks every paragraph against this list and fails if a
+sentence is not a whole sentence of the node cited for it.</p>
+<ul><li>Prompt: none. The division recommends 1-3 pages single-spaced (programs/chicago.toml).</li><li>Length: 1,087 words (about two pages single-spaced). Target 700-1,100.</li><li>Order: essays/chicago/essay.toml's outline, c-01 to c-10; one paragraph each.</li></ul>
+<h3>Paragraphs: the node of each sentence, in order</h3>
+<pre>| marker | role | words | sentences, in order |
+|---|---|---|---|
+| c-01 | opening: Todd | 78 | todd-01 ×7 (its sentences 1, 3, 4, 5, 15, 19, 20) |
+| c-02 | thesis: the problem, the proposal, the thesis sentence | 100 | ans-45, ans-45, ans-76, ans-175, ans-174, ans-174 |
+| c-03 | hypothesis: the pleasure makes the loop; the anthem; Eris | 148 | ans-62 ×4, ans-119, ans-173, ans-173, ans-180 ×4 |
+| c-04 | criterion: guardrails, care, non-compulsion, abstention | 93 | ans-124, ans-124, ans-85, ans-02, ans-02, ans-94 ×3 |
+| c-05 | method: the model, the first two semesters, year five, the portfolio | 135 | ans-158, ans-158, ans-157 ×3, ans-158, ans-138, ans-133 |
+| c-06 | the record: loops that outlived the founder and one that didn't | 129 | ans-128, ans-24, ans-86, ans-86, ans-175, ans-22, ans-13 |
+| c-07 | notation: the woodwind book, "Chiasmus" | 129 | ans-44 ×5, ans-172 ×3 |
+| c-08 | the argument: academic and community economies, the church | 92 | ans-52, ans-52, q8-open ×3, past.N077, q8-open |
+| c-09 | credential: craft | 94 | past.N013, ans-175, ans-172, ans-182, ans-182 |
+| c-10 | why leave, why a PhD | 89 | ans-07, ans-13, ans-05, ans-05, ans-114 |</pre>
+<p>Nodes from outside essay.toml's clusters, pulled in by role: ans-172, ans-173, ans-174, ans-175,
+ans-180, ans-182 (filed 2026-11-24 and 25), ans-157 and ans-158 (the two cuts on the apply page),
+ans-114, ans-133.</p>
+<h3>Gaps: what no sentence of yours answers</h3>
+<ul><li><strong>Why Chicago.</strong> The statement never names the school; check.py warns on it. Your only
+sentences that name Chicago are in the voice note answering "why here" ("I mean, Chicago has
+more thinkers."), cut as chat.</li><li><strong>Who you would study with.</strong> No sentence of yours names a Chicago teacher or says what in
+their work draws you.</li><li><strong>Where the proposal lands.</strong> No sentence names the ensemble that plays the first score or the
+community that comes to the open performances. Your "whatever ensemble the school has to work
+with" is cut (see below).</li><li><strong>The 2019 argument and what changed.</strong> c-08 says what you believe now; the 2019 sentence
+("I argue the opposite ...") is cut, so the change is not stated as a change.</li><li><strong>Craft as one loop's currency.</strong> The credential paragraph shows the craft; no plain sentence
+says why craft belongs in this proposal (your sentences on it are chat).</li><li><strong>What a reader would count at year five.</strong> Your measures sentence is a list, not a sentence.</li><li><strong>Two names the reader is not given.</strong> "Ken" (c-03) and "Abe" (c-06).</li></ul>
+<h3>Cuts, and why</h3>
+<ul><li><strong>Chat</strong> (bin/prose-gaps's list, or a voice-note opener): the proposal sentence that opens
+"What I'm proposing is that"; the "This Will Be Our Year" line ("adaptation:"); every sentence
+of the why-here voice note ("Okay, yeah, I mean ..."); "That sounds reasonable."; the craft
+answers ("I guess the thing that's missing ...", "I think the best way to handle this ...").</li><li><strong>Fragments or no closing sentence</strong>: "Recorded minutes, minutes performed, self-identified
+members."; "The band chart as a democratizing text ..." (no verb); "My ability to work with
+teams."; the last Eris sentence (the second line and the ephemera), which has no full stop and
+cannot sit before another sentence; "Both."</li><li><strong>Points at something the reader was not shown</strong>: the two examples of the loop returning with
+an artifact are not named in the draft; "the hard part is how to go from the boots, draft,
+founder period" (the transcript's "bootstrap"); "I argue the opposite" (the 2019 essay, with
+its footnote marker); "Notation is a piece of that puzzle"; "The ensemble closed the loop
+without me" (past tense, and "why?" alone).</li><li><strong>Terms of art, two or more a sentence</strong>: the identification and adaptation sentences, the
+senders-and-recipients question, the Social Aid and Pleasure premise with its note to self
+("we need Sakakeey here"), the music-and-manipulation flowchart.</li><li><strong>Names another school or speaks to one reader</strong>: the letter openers ("Thank you for writing
+recommendations ..."); "Compositions in my portfolio demonstrate notational devices I learned
+from you"; "I can be more specific as it relates to each school".</li><li><strong>Length</strong> (whole sentences that are fine, cut to stay near two pages): Todd's hymnal-essay
+sentences; "Squeeze up until the big parade day." and its pair; "If you have to keep kicking,
+that's a bicycle not a motorcycle."; "The score is like the Dungeon Master's screen";
+"Love Me (Long)" and Siddhartha's "Total Abstration"; '67 and the vocoder; the snapshot and
+drift sentences; "Care often motivates manipulation."; the sobriety-groups example;
+"My work is going to be written for professional musicians" and the amateur-audience sentence
+that follows it; "The idea is that I can exit the loop both financially and in labor terms.";
+"I want to model for my peers the sense of responsibility I feel."; the string band.</li><li><strong>Your own later ruling</strong>: "The thesis is that Eris ... (see arrests c. 2012)" waits on the date
+you corrected to 2011; the software-pipeline sentence of the model paragraph, which you called a
+non sequitur.</li></ul>
+<h3>FOR ZACH:</h3>
+<ul><li>Q: The statement never names Chicago. The only sentence of yours that does is from the voice
+note ("I mean, Chicago has more thinkers."). Keep that, or write why Chicago?</li><li>Q: Who at Chicago do you want to work with, and what in their work? No sentence of yours says.</li><li>Q: Which ensemble plays your first score at Chicago, and which community comes to the open
+performances?</li><li>E: Your thesis sentence sits in paragraph two as you typed it for the apply page: it starts
+lowercase, says "notation is produces", and ends without a full stop. Keep it that way here?</li><li>Q: The anthem paragraph says "just like Ken's person-specific material" and the record says
+"Abe put so much of his uncompensated labor in". A reader meets Ken and Abe there for the first
+time. Who are they, in a clause?</li><li>Q: The paragraph on academic composers and church service says what you believe now. What did
+you argue in 2019, in one sentence, so the reader sees what changed?</li><li>Q: Why does craft belong in a proposal about handing a community its own music? Your sentences
+on it are from chat.</li><li>E: Read it start to finish: Todd, founders who retire, the proposal, the anthem and Eris, care,
+the two semesters, the record, the woodwind book, the church, the craft, why leave. Does the
+order carry, and what would you put back from the cut list?</li></ul>
+<p><a href="/apply/essays/">All essays, drafts for auditing</a></p>
+</body>
+</html>
