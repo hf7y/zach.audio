@@ -23,7 +23,7 @@
 	</nav>
 </header>
 	<h1>essays/brown/draft-notes.md</h1>
-<p id=draft-note>Draft for auditing. Rendered from essays/brown/draft-notes.md at 50381f6, 2026-11-25. Nothing here is submitted.</p>
+<p id=draft-note>Draft for auditing. Rendered from essays/brown/draft-notes.md at 81e1d40, 2026-11-25. Nothing here is submitted.</p>
 <h2>Brown University: notes on the first statement draft</h2>
 <p>Agent notes (2026-11-25, committee-loop W-h1-26), not part of the statement. <code>prose.md</code> holds only
 your sentences, copied whole and verbatim from the sources named below (<code>present.</code> is
@@ -33,19 +33,19 @@ of them. <code>tests/test_brown_essay.py</code> walks every paragraph against th
 is not a whole sentence of the source cited for it. It replaces the raw join of every cluster's node
 texts (7,468 words) that <code>bin/prose-draft</code> wrote.</p>
 <ul><li>Prompt (programs/brown.toml, paraphrased there): the background of your creative practice and your
-current and future interests in expanding it at Brown.</li><li>Length: 1,450 words. The MMC FAQ gives no limit; most statements run 1,000-1,500 words, "a norm,
-not a requirement".</li><li>Order: background first (opening, craft, record, notation), then current and future interests
+current and future interests in expanding it at Brown.</li><li>Length: 1,464 words (1,450 before the 2026-11-25 W-h2-20 changes below). The MMC FAQ gives no limit; most statements run 1,000-1,500 words, "a norm,
+not a requirement".</li><li>Order: background first (opening, notation, craft, record), then current and future interests
 (question, hypothesis, criterion, method, the argument, why leave). essays/brown/essay.toml's outline
 is reordered to match; the clusters are unchanged.</li></ul>
 <h3>Paragraphs: the source of each sentence, in order</h3>
 <pre>| marker | role | words | sentences, in order |
 |---|---|---|---|
-| c-01 | opening: Todd | 78 | todd-01 ×7 (its sentences 1, 3, 4, 5, 15, 19, 20) |
-| c-09 | background: composing, Ueno, the string players, the computer work | 189 | past.N042 ×2, past.N013, ans-175, compositions ×4 (Special Pleading ×2, Tresse ×2), ans-69, ans-182 ×4, ans-172 |
-| c-06 | background: the record, the founder, Siddhartha | 164 | ans-24, ans-128, ans-23 ×3, ans-175, ans-129, ans-22, ans-13 |
+| c-01 | opening: Todd | 106 | todd-01 ×10 (its sentences 1, 3, 4, 5, 9, 15, 17, 18, 19, 20) |
 | c-07 | background: notation, the woodwind book, "Chiasmus" | 129 | ans-44 ×5, ans-172 ×3 |
+| c-09 | background: composing, Ueno, the string players, the computer work | 186 | past.N042 ×2, past.N013, ans-175, compositions ×4 (Special Pleading ×2, Tresse ×2), ans-69, ans-182 ×3, ans-172 |
+| c-06 | background: the record, the founder, Siddhartha | 164 | ans-24, ans-128, ans-23 ×3, ans-175, ans-129, ans-22, ans-13 |
 | c-02 | current interests: the question, Steven Brown, the proposal, the thesis | 161 | ans-45 ×2, ans-76, ans-99 ×5, ans-175, ans-174 ×2 |
-| c-03 | current interests: the anthem, Eris, the pleasure makes the loop | 190 | ans-119, ans-173 ×2, ans-180 ×4, ans-62 ×4, ans-111 ×3, ans-136 ×2 |
+| c-03 | current interests: the anthem, Eris, the pleasure makes the loop | 179 | ans-119, ans-173, ans-180 ×4, ans-62 ×4, ans-111 ×3, ans-136 ×2 |
 | c-04 | current interests: guardrails, non-compulsion, abstention | 110 | ans-124 ×2, ans-85, ans-02 ×3, ans-94 ×3 |
 | c-05 | future: the model, the two semesters, the signal flow, year five | 214 | ans-158 ×2, ans-142 ×3, ans-157 ×3, ans-158, ans-144 ×2, ans-145, ans-138, ans-133 |
 | c-08 | future: academic and community economies, the church, responsibility | 105 | ans-52 ×2, q8-open ×3, past.N077, q8-open ×2 |
@@ -56,6 +56,30 @@ Sources from outside essay.toml's clusters, pulled in by role: ans-23, ans-69, a
 ans-133, ans-138, ans-142, ans-144, ans-145, ans-157, ans-158, ans-172, ans-173, ans-174, ans-175,
 ans-180, ans-182, and the two program notes (Special Pleading, Tresse; essays/core/bio-candidates.md
 quotes them).</p>
+<h3>Changes of 2026-11-25 (committee-loop W-h2-20, W-h2-21)</h3>
+<p>The second round of judges read this draft; each change below answers a line of theirs, quoted.
+Every one is a whole-sentence pull-in, cut or move; no sentence of yours was changed. Each is yours
+to reverse.</p>
+<ul><li><strong>Todd (c-01): two passages of todd-01 pulled in</strong>, where Harvard's personal statement has them.
+The judges: "'the memory' and 'the burden' have no antecedent here because the 'mouth to ear…
+fragile' sentences are cut" (L2 r 10).</li><li style="margin-left:1.0em">"I hate for my literacy to imply an automatic priority over embodied knowledge." now follows
+"He doesn't read; he plays by ear."</li><li style="margin-left:1.0em">"It's obviously beautiful when culture is transmitted mouth to ear: intimate. But that's also
+fragile." now follows "He turned to me, not in submission but in confidence, that I could keep
+the memory."</li><li><strong>The woodwind book (c-07) moved up</strong> to follow Todd, before the composing paragraph (c-09). The
+judges: "'One year I decided to bring in my friend Chiara' ... bring in to what? ... Harvard's
+order (right after Todd) works" (L2 r 11). Before: Todd, composing, the record, the woodwind book.</li><li><strong>"These are loops." cut</strong> (ans-182, its fourth sentence, from c-09). The judges: "'These are
+loops.' follows '67, Film B, Astrocasper bowing | 'loops' is not yet defined" (L2 r 6). The other
+way was to move c-09 after c-02, where "loop" is first introduced ("the basic Mardi Gras loop" is
+in c-06; c-02 has "I exit the loop"). The agent chose the cut, which keeps the prompt's
+background-first order; the sentence goes back after "render score from players." if you want it
+and the other order.</li><li><strong>"The model is the anthem, prime reference is Anthem for Eris." cut</strong> (ans-173, from c-03). The
+first-round notes put this to you as a question (the two "The model is" sentences); the second
+round's judges ruled: "'The model is' means two different things. ... A reader cannot tell whether
+the model is a piece of music or a workflow." (L2 r COH1). The kept one is "The model is a blend of
+devised work and notated instruction." (ans-158, c-05). The cut also drops the "prime reference"
+claim to a tune that is not yours. If you want the anthem sentence instead, it goes back after
+"The object of study is the anthem which is communication of an identity through performance."
+and the other one is the cut. The same cut is made in RPI, UCSD and UCI.</li></ul>
 <h3>Steven Brown</h3>
 <p>Your "That's Steven Brown." (ans-99) sits in paragraph c-02 with the sentences around it in ans-99
 ("The insight here is that the senders and receivers ..." to "What music persuades its recipients to
@@ -100,11 +124,14 @@ work with?</li><li>Q: Which ensemble plays your first score at Brown, and which 
 open performances?</li><li>Q: The statement says "That's Steven Brown." and later "Brown's flow chart". A reader at Brown
 University has not been told who Steven Brown is. Who is he, in a clause, and which book?</li><li>Q: What does the multimedia side add that the band and the krewe could not do? Your sentence on it
 ("a media work made by a group ... some kind of technological multimedia work") is from chat.</li><li>Q: Brown's dissertation is a work plus a paper of 100-120 pages. Is your "final portfolio" the work,
-and what is the paper?</li><li>E: The statement has two sentences that begin "The model is": the anthem (paragraph six) and the
-blend of devised work and notated instruction (paragraph eight). Read them together: do they say
-the same model?</li><li>E: Your thesis sentence sits as you typed it for the apply page: it starts lowercase, says "notation
-is produces", and ends without a full stop. Keep it that way here?</li><li>E: Read it start to finish: Todd, composing and the computer work, the Mardi Gras loop and
-Siddhartha, the woodwind book, founders who retire and Steven Brown, the anthem and Eris, care and
+and what is the paper?</li><li>E: Of your two sentences that began "The model is", the agent kept "The model is a blend of
+devised work and notated instruction." and cut "The model is the anthem, prime reference is Anthem
+for Eris.", because the judges could not tell whether the model was a piece of music or a
+workflow. If you want the anthem one instead, say so and they swap.</li><li>E: "These are loops." (after Film B, "generate score for players, render score from players") is
+cut, because it came before the statement says what a loop is. Want it back, with the composing
+paragraph moved after the founders-who-retire paragraph?</li><li>E: Your thesis sentence sits as you typed it for the apply page: it starts lowercase, says "notation
+is produces", and ends without a full stop. Keep it that way here?</li><li>E: Read it start to finish: Todd, the woodwind book, composing and the computer work, the Mardi
+Gras loop and Siddhartha, founders who retire and Steven Brown, the anthem and Eris, care and
 abstention, the two semesters and the signal flow, the church, why leave. Does background-first
 carry, and what would you put back from the cut list?</li></ul>
 <p><a href="/apply/essays/">All essays, drafts for auditing</a></p>

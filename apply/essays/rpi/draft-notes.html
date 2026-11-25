@@ -23,7 +23,7 @@
 	</nav>
 </header>
 	<h1>essays/rpi/draft-notes.md</h1>
-<p id=draft-note>Draft for auditing. Rendered from essays/rpi/draft-notes.md at 6c78166, 2026-11-25. Nothing here is submitted.</p>
+<p id=draft-note>Draft for auditing. Rendered from essays/rpi/draft-notes.md at 5f6fd6e, 2026-11-25. Nothing here is submitted.</p>
 <h2>Rensselaer Polytechnic Institute: notes on the first draft of both texts</h2>
 <p>Agent notes (2026-11-25, W-h1-27), not part of either text. <code>prose.md</code> holds only your sentences,
 copied whole and verbatim from the nodes named below (<code>present.</code> is vision/present.toml, <code>past.</code> is
@@ -33,6 +33,8 @@ from essays/rpi/cut.md and pulls in the newer sentences on the apply page (essay
 <code>tests/test_rpi_essay.py</code> walks every paragraph against this list and fails if a sentence is not a
 whole sentence of the node cited for it, if a sentence appears in both texts, or if the proposal
 runs over 1,300 words.</p>
+<p>Second pass (2026-11-25, h2-synth W-h2-22 and W-h2-21): whole-sentence reorders and one cut, below
+under "Second pass". The tables give the draft as it now stands.</p>
 <h3>Two texts in one file</h3>
 <p>RPI asks for two texts (programs/rpi.toml <code>[prompts]</code>). check.py reads one prose.md, one paragraph
 per cluster marker, in outline order, so essay.toml maps each marker to one text and runs the
@@ -40,7 +42,7 @@ outline text by text:</p>
 <pre>| text | prompt | markers | words | limit |
 |---|---|---|---|---|
 | `statement` | "Statement of Background and Goals" | s-01 to s-08 | 777 | none given (programs/rpi.toml `open`); the cut sheet aimed at 800 |
-| `proposal` | "Research Proposal (up to 3 pages)" | p-01 to p-09 | 1,288 | 3 pages: about 2.5 pages single-spaced; held under 1,300 by the test |</pre>
+| `proposal` | "Research Proposal (up to 3 pages)" | p-00 to p-09 | 1,277 | 3 pages: about 2.5 pages single-spaced; held under 1,300 by the test |</pre>
 <p>Counts split on whitespace. The c-01 to c-10 clusters stay in essay.toml as the core-synced pool the
 worksheet and the cut sheet were built from; they are in no prompt and not in the outline. To paste
 into the portal: the statement is the s- paragraphs, the proposal the p- paragraphs; the markers
@@ -57,12 +59,13 @@ are not pasted.</p>
 | s-06 | academic and research interests | 61 | ans-76, ans-111 ×3, ans-74 ×2 |
 | s-07 | future career goals | 57 | ans-59, ans-23 ×3, ans-56 |
 | s-08 | degree and fit: why a PhD, why leave | 103 | ans-07, ans-02, ans-101, q8-open, ans-05 ×2, ans-114 |</pre>
-<h4>Research Proposal (1,288 words)</h4>
+<h4>Research Proposal (1,277 words)</h4>
 <pre>| marker | role | words | sentences, in order |
 |---|---|---|---|
-| p-01 | question; the proposal and the thesis sentence | 170 | ans-99 ×7, ans-119 ×3, ans-175, ans-174 ×2 |
+| p-00 | opening: the proposal sentence and the thesis line | 50 | ans-175, ans-174 ×2 |
+| p-01 | question | 120 | ans-99 ×7, ans-119 ×3 |
 | p-02 | problem and hypothesis | 243 | ans-128, ans-24, ans-86 ×2, ans-62 ×4, ans-63, ans-104 ×2, ans-136 ×3 |
-| p-03 | the model: the anthem, Eris, what it holds variable | 175 | ans-173 ×3, ans-180 ×4, ans-124 ×3, ans-137 ×2, ans-139 |
+| p-03 | the model: the anthem, Eris, what it holds variable | 164 | ans-173 ×2, ans-180 ×4, ans-124 ×3, ans-137 ×2, ans-139 |
 | p-04 | method: the open performance | 162 | ans-158 ×2, ans-142 ×3, ans-120 ×2, ans-142 ×4, ans-144 ×2, ans-142 |
 | p-05 | method: the technology, the first two semesters | 152 | ans-147 ×2, ans-94 ×3, ans-145 ×2, ans-157 ×3 |
 | p-06 | periodicity | 93 | ans-148 ×4, ans-149 ×4 |
@@ -78,6 +81,24 @@ ans-94's compression sentence, ans-24's Mardi Gras loop, ans-44's "I made a book
 <p>The synthesis rules: ans-136's premise sentence, which carries "(we need Sakakeey here)" and
 "Brown's closed loop", is cut whole. The one other sentence that says "Brown's" (ans-145, "model
 Brown's flow chart", p-05) comes after "That's Steven Brown." (p-01). No other program is named.</p>
+<h3>Second pass (2026-11-25): what moved, what was cut, and why</h3>
+<ul><li><strong>p-00, the opening (W-h2-22).</strong> The proposal sentence (ans-175: "I'm investigating how to use a
+team of professionals to kickstart a community of musicians that sustains itself.") and the
+thesis line (ans-174, both sentences, as typed) moved whole from the end of p-01 to open the
+proposal. The judge's reason (h2 L2 reader, item 15): p-01 "opens 'It's the relationship between
+social function and persuasion that's interesting.'", so "the first sentence of a research
+proposal begins mid-thought". They take a paragraph of their own (marker p-00, so p-01 to p-09
+keep their numbers) because the thesis line ends "without my hand once" with no full stop and
+cannot sit before another sentence. p-01 now opens on ans-99. "That's Steven Brown." stays in
+p-01, before p-05's "Brown's flow chart" (tested).</li><li><strong>p-03, cut (W-h2-21).</strong> "The model is the anthem, prime reference is Anthem for Eris."
+(ans-173's second sentence) is cut whole. The judge's reason (h2 L2 reader, coherence 1):
+"'The model is' means two different things." It sat beside p-04's "The model is a blend of
+devised work and notated instruction.", which stays, and "A reader cannot tell whether the model
+is a piece of music or a workflow." The cut also drops the "prime reference" claim to a tune that
+is not yours (J.R. Hankins's Anthem for Eris; h1 W-h1-14). p-03 now opens "Anthem embodies the
+ethos of the community just like Ken's person-specific material does.", and p-01's "The object of
+study is the anthem which is communication of an identity through performance." is the proposal's
+first word on what an anthem is.</li></ul>
 <h3>Gaps: what no sentence of yours answers</h3>
 <ul><li><strong>Why RPI.</strong> Neither text names RPI, Rensselaer, Electronic Arts, EMPAC or Troy; check.py warns
 on it. No sentence of yours names any of them.</li><li><strong>Who you would study with.</strong> No sentence names Matthew Goodheart, Rob Hamilton, Igor Vamos or
@@ -93,6 +114,7 @@ points at "this piece" without naming it (cut).</li><li><strong>What would count
 question 4).</li><li><strong>Names the reader is not given.</strong> "Ken" (p-03), "Abe" (p-02), "the krewe" (s-01: the Krewe of
 Vaporwave, but the reader meets Eris next), "Brown's flow chart" (p-05: the chart is not shown).</li></ul>
 <h3>Cuts, and why</h3>
+<ul><li><strong>Second pass</strong>: ans-173's "The model is the anthem, prime reference is Anthem for Eris." (above).</li></ul>
 <ul><li><strong>The synthesis's cuts</strong>: ans-136's premise sentence ("(we need Sakakeey here)", "Brown's closed
 loop").</li><li><strong>Chat</strong> (bin/prose-gaps's list, or a transcript opener): "What I'm proposing is that I will host
 weekly open performances ..."; "I mean, currently I'm working on a lily pond to Ableton kind of
@@ -128,10 +150,14 @@ this piece for the end-of-semester Undergraduate Composers Club at Berkeley." Wh
 social function through the motivation of identification." You later wrote "The identity exists
 before the anthem." Which one stays?</li><li>Q: Ken (the anthem paragraph), Abe (the Vaporwave sentence) and "the krewe" in the Rick Snow
 sentence (Vaporwave, though the reader meets Eris next) arrive unexplained. Who are they, in a
-clause? And should "Brown's flow chart" name the book?</li><li>E: Your thesis sentence ends the proposal's first paragraph as you typed it: lowercase, "notation
-is produces", no full stop. Keep it that way here?</li><li>E: The proposal is 1,288 words, about two and a half pages single-spaced. Double-spaced, it must
+clause? And should "Brown's flow chart" name the book?</li><li>E: Your thesis sentence now opens the proposal, as its own short paragraph after the proposal
+sentence, as you typed it: lowercase, "notation
+is produces", no full stop. Keep it that way here?</li><li>E: The proposal is 1,277 words, about two and a half pages single-spaced. Double-spaced, it must
 lose about 500 words. Which spacing?</li><li>E: Read both texts start to finish. Does the order carry, and what would you put back from the cut
-list?</li></ul>
+list?</li><li>E: The proposal had two sentences that begin "The model is": one says the model is the anthem
+("prime reference is Anthem for Eris"), the other that it is a blend of devised work and notated
+instruction. A reader could not tell which you meant, so the anthem one is cut. If you want that
+one instead, the other goes.</li></ul>
 <p><a href="/apply/essays/">All essays, drafts for auditing</a></p>
 </body>
 </html>

@@ -23,30 +23,40 @@
 	</nav>
 </header>
 	<h1>essays/chicago/draft-notes.md</h1>
-<p id=draft-note>Draft for auditing. Rendered from essays/chicago/draft-notes.md at 75827fa, 2026-11-25. Nothing here is submitted.</p>
+<p id=draft-note>Draft for auditing. Rendered from essays/chicago/draft-notes.md at 1fa9544, 2026-11-25. Nothing here is submitted.</p>
 <h2>University of Chicago: notes on the first statement draft</h2>
 <p>Agent notes (2026-11-25), not part of the statement. <code>prose.md</code> holds only your sentences, copied
 whole and verbatim from the nodes named below (<code>present.</code> is vision/present.toml, <code>past.</code> is
 vision/past.toml). The agent chose which sentences, their order and the cuts; it wrote none of
 them. <code>tests/test_chicago_essay.py</code> walks every paragraph against this list and fails if a
 sentence is not a whole sentence of the node cited for it.</p>
-<ul><li>Prompt: none. The division recommends 1-3 pages single-spaced (programs/chicago.toml).</li><li>Length: 1,087 words (about two pages single-spaced). Target 700-1,100.</li><li>Order: essays/chicago/essay.toml's outline, c-01 to c-10; one paragraph each.</li></ul>
+<ul><li>Prompt: none. The division recommends 1-3 pages single-spaced (programs/chicago.toml).</li><li>Length: 1,100 words (about two pages single-spaced). Target 700-1,100. (1,087 before the
+2026-11-25 pull-ins below: +28 for the two todd-01 passages, -15 for the two length cuts.)</li><li>Order: essays/chicago/essay.toml's outline, c-01 to c-10; one paragraph each.</li></ul>
 <h3>Paragraphs: the node of each sentence, in order</h3>
 <pre>| marker | role | words | sentences, in order |
 |---|---|---|---|
-| c-01 | opening: Todd | 78 | todd-01 ×7 (its sentences 1, 3, 4, 5, 15, 19, 20) |
+| c-01 | opening: Todd | 106 | todd-01 ×10 (its sentences 1, 3, 4, 5, 9, 15, 17, 18, 19, 20) |
 | c-02 | thesis: the problem, the proposal, the thesis sentence | 100 | ans-45, ans-45, ans-76, ans-175, ans-174, ans-174 |
-| c-03 | hypothesis: the pleasure makes the loop; the anthem; Eris | 148 | ans-62 ×4, ans-119, ans-173, ans-173, ans-180 ×4 |
+| c-03 | hypothesis: the pleasure makes the loop; the anthem; Eris | 144 | ans-62 ×4, ans-119, ans-173, ans-173, ans-180 ×3 |
 | c-04 | criterion: guardrails, care, non-compulsion, abstention | 93 | ans-124, ans-124, ans-85, ans-02, ans-02, ans-94 ×3 |
 | c-05 | method: the model, the first two semesters, year five, the portfolio | 135 | ans-158, ans-158, ans-157 ×3, ans-158, ans-138, ans-133 |
 | c-06 | the record: loops that outlived the founder and one that didn't | 129 | ans-128, ans-24, ans-86, ans-86, ans-175, ans-22, ans-13 |
 | c-07 | notation: the woodwind book, "Chiasmus" | 129 | ans-44 ×5, ans-172 ×3 |
 | c-08 | the argument: academic and community economies, the church | 92 | ans-52, ans-52, q8-open ×3, past.N077, q8-open |
 | c-09 | credential: craft | 94 | past.N013, ans-175, ans-172, ans-182, ans-182 |
-| c-10 | why leave, why a PhD | 89 | ans-07, ans-13, ans-05, ans-05, ans-114 |</pre>
+| c-10 | why leave, why a PhD | 78 | ans-07, ans-13, ans-05, ans-05 |</pre>
 <p>Nodes from outside essay.toml's clusters, pulled in by role: ans-172, ans-173, ans-174, ans-175,
 ans-180, ans-182 (filed 2026-11-24 and 25), ans-157 and ans-158 (the two cuts on the apply page),
-ans-114, ans-133.</p>
+ans-133.</p>
+<h3>Pulled in 2026-11-25 (committee loop, W-h2-03)</h3>
+<p>The judges read "He turned to me ... that I could keep the memory" and "the burden" as having
+nothing before them. Two todd-01 passages go back in c-01, in the positions Harvard's c-01 uses:</p>
+<ul><li>"I hate for my literacy to imply an automatic priority over embodied knowledge." (todd-01,
+sentence 9), after "He doesn't read; he plays by ear."</li><li>"It's obviously beautiful when culture is transmitted mouth to ear: intimate. But that's also
+fragile." (todd-01, sentences 17 and 18), after "... that I could keep the memory."</li></ul>
+<p>Neither was a deliberate cut: the length list below names only Todd's hymnal-essay sentences
+(todd-01 sentences 10-13), not these. To stay at 1,100, two whole sentences went out for length
+(listed below).</p>
 <h3>Gaps: what no sentence of yours answers</h3>
 <ul><li><strong>Why Chicago.</strong> The statement never names the school; check.py warns on it. Your only
 sentences that name Chicago are in the voice note answering "why here" ("I mean, Chicago has
@@ -78,7 +88,11 @@ that's a bicycle not a motorcycle."; "The score is like the Dungeon Master's scr
 drift sentences; "Care often motivates manipulation."; the sobriety-groups example;
 "My work is going to be written for professional musicians" and the amateur-audience sentence
 that follows it; "The idea is that I can exit the loop both financially and in labor terms.";
-"I want to model for my peers the sense of responsibility I feel."; the string band.</li><li><strong>Your own later ruling</strong>: "The thesis is that Eris ... (see arrests c. 2012)" waits on the date
+"I want to model for my peers the sense of responsibility I feel."; the string band; and on
+2026-11-25, to make room for the two todd-01 passages, "There are no floats." (ans-180; c-03
+still says "anyone can show up and play along") and "I will continue to come back for ritual
+loops like Carnival." (ans-114; c-10 now ends on "Leaving here is essential for putting my
+hypothesis to the test.").</li><li><strong>Your own later ruling</strong>: "The thesis is that Eris ... (see arrests c. 2012)" waits on the date
 you corrected to 2011; the software-pipeline sentence of the model paragraph, which you called a
 non sequitur.</li></ul>
 <h3>FOR ZACH:</h3>
@@ -89,7 +103,11 @@ lowercase, says "notation is produces", and ends without a full stop. Keep it th
 "Abe put so much of his uncompensated labor in". A reader meets Ken and Abe there for the first
 time. Who are they, in a clause?</li><li>Q: The paragraph on academic composers and church service says what you believe now. What did
 you argue in 2019, in one sentence, so the reader sees what changed?</li><li>Q: Why does craft belong in a proposal about handing a community its own music? Your sentences
-on it are from chat.</li><li>E: Read it start to finish: Todd, founders who retire, the proposal, the anthem and Eris, care,
+on it are from chat.</li><li>Q: Two lines left this draft to make room for the Todd passage about mouth-to-ear culture being
+fragile: "There are no floats." and "I will continue to come back for ritual loops like
+Carnival." The statement now ends on "Leaving here is essential for putting my hypothesis to
+the test." Do you want either back, and if so, what goes instead? (The draft is at 1,100 words,
+the top of its target.)</li><li>E: Read it start to finish: Todd, founders who retire, the proposal, the anthem and Eris, care,
 the two semesters, the record, the woodwind book, the church, the craft, why leave. Does the
 order carry, and what would you put back from the cut list?</li></ul>
 <p><a href="/apply/essays/">All essays, drafts for auditing</a></p>
