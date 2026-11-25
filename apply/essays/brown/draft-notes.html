@@ -1,0 +1,112 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>essays/brown/draft-notes.md</h1>
+<p id=draft-note>Draft for auditing. Rendered from essays/brown/draft-notes.md at 50381f6, 2026-11-25. Nothing here is submitted.</p>
+<h2>Brown University: notes on the first statement draft</h2>
+<p>Agent notes (2026-11-25, committee-loop W-h1-26), not part of the statement. <code>prose.md</code> holds only
+your sentences, copied whole and verbatim from the sources named below (<code>present.</code> is
+vision/present.toml, <code>past.</code> is vision/past.toml, <code>compositions</code> is your program notes on
+compositions/index.html). The agent chose which sentences, their order and the cuts; it wrote none
+of them. <code>tests/test_brown_essay.py</code> walks every paragraph against this list and fails if a sentence
+is not a whole sentence of the source cited for it. It replaces the raw join of every cluster's node
+texts (7,468 words) that <code>bin/prose-draft</code> wrote.</p>
+<ul><li>Prompt (programs/brown.toml, paraphrased there): the background of your creative practice and your
+current and future interests in expanding it at Brown.</li><li>Length: 1,450 words. The MMC FAQ gives no limit; most statements run 1,000-1,500 words, "a norm,
+not a requirement".</li><li>Order: background first (opening, craft, record, notation), then current and future interests
+(question, hypothesis, criterion, method, the argument, why leave). essays/brown/essay.toml's outline
+is reordered to match; the clusters are unchanged.</li></ul>
+<h3>Paragraphs: the source of each sentence, in order</h3>
+<pre>| marker | role | words | sentences, in order |
+|---|---|---|---|
+| c-01 | opening: Todd | 78 | todd-01 ×7 (its sentences 1, 3, 4, 5, 15, 19, 20) |
+| c-09 | background: composing, Ueno, the string players, the computer work | 189 | past.N042 ×2, past.N013, ans-175, compositions ×4 (Special Pleading ×2, Tresse ×2), ans-69, ans-182 ×4, ans-172 |
+| c-06 | background: the record, the founder, Siddhartha | 164 | ans-24, ans-128, ans-23 ×3, ans-175, ans-129, ans-22, ans-13 |
+| c-07 | background: notation, the woodwind book, "Chiasmus" | 129 | ans-44 ×5, ans-172 ×3 |
+| c-02 | current interests: the question, Steven Brown, the proposal, the thesis | 161 | ans-45 ×2, ans-76, ans-99 ×5, ans-175, ans-174 ×2 |
+| c-03 | current interests: the anthem, Eris, the pleasure makes the loop | 190 | ans-119, ans-173 ×2, ans-180 ×4, ans-62 ×4, ans-111 ×3, ans-136 ×2 |
+| c-04 | current interests: guardrails, non-compulsion, abstention | 110 | ans-124 ×2, ans-85, ans-02 ×3, ans-94 ×3 |
+| c-05 | future: the model, the two semesters, the signal flow, year five | 214 | ans-158 ×2, ans-142 ×3, ans-157 ×3, ans-158, ans-144 ×2, ans-145, ans-138, ans-133 |
+| c-08 | future: academic and community economies, the church, responsibility | 105 | ans-52 ×2, q8-open ×3, past.N077, q8-open ×2 |
+| c-10 | future: why leave | 110 | ans-07, ans-13, ans-05 ×3, ans-114 |</pre>
+<p>The newer sentences of the apply page are all in: the proposal sentence (ans-175), the thesis as you
+typed it (ans-174), the model (ans-158, ans-173, ans-180), the first two semesters (ans-157).
+Sources from outside essay.toml's clusters, pulled in by role: ans-23, ans-69, ans-111, ans-129,
+ans-133, ans-138, ans-142, ans-144, ans-145, ans-157, ans-158, ans-172, ans-173, ans-174, ans-175,
+ans-180, ans-182, and the two program notes (Special Pleading, Tresse; essays/core/bio-candidates.md
+quotes them).</p>
+<h3>Steven Brown</h3>
+<p>Your "That's Steven Brown." (ans-99) sits in paragraph c-02 with the sentences around it in ans-99
+("The insight here is that the senders and receivers ..." to "What music persuades its recipients to
+become senders?"; "So the insight here is about persuasion." is cut). It comes before the one
+sentence that says "Brown's flow chart" (ans-145, the Pure Data signal flow, in c-05). The test fails
+if a "Brown's flow chart" or "Brown's closed loop" sentence ever comes first. "Brown's closed loop"
+(ans-136, first sentence) is cut.</p>
+<h3>Gaps: what no sentence of yours answers</h3>
+<ul><li><strong>"At Brown."</strong> The prompt's last two words. No sentence of yours names Brown, MMC, Providence or
+anyone on the faculty; check.py warns on it. The why-leave paragraph (c-10) says what you want from
+a new place, not why this one.</li><li><strong>Whom you would study with, and which ensemble and community.</strong> No sentence names a Brown teacher,
+the ensemble that plays the first score, or the community that comes to the open performances.</li><li><strong>What the multimedia side adds.</strong> The background shows the computer work (Pure Data, Lilypond,
+the vocoder, Film B), and the future has one sentence of it (the signal flow). Your sentence "It's a
+media work made by a group, essentially a band, some kind of technological multimedia work." is cut
+for "kind of" (a chat word the gates refuse), and its next sentence ("That has a live component and
+a virtual component.") cannot stand without it.</li><li><strong>The dissertation's form.</strong> Brown asks for an original work plus a paper of 100-120 pages. Your
+"final portfolio" sentence (c-05) names the work; no sentence names the paper.</li><li><strong>Names the reader is not given.</strong> Vaporwave (c-06), Nouveaux Classical and UNT (c-09), the Jazz
+and Heritage Foundation (c-06), Steven Brown (c-02: who he is and which book).</li></ul>
+<h3>Cuts, and why</h3>
+<ul><li><strong>The why-Chicago answer</strong> (ans-72, "I'm interested in Chicago as like a larger city ..."): names
+another school. Nothing else in the draft names a school.</li><li><strong>Chat turns, cut whole</strong>: "Got it." (ans-99); "What I'm proposing is that ..." (ans-144p); "Give me
+some other ideas." and the rest of the web-app answer (ans-69, after its first sentence); "That
+sounds reasonable." (ans-157); "Yeah so this is what I'm stumped on." (ans-13); ans-70's "It's a
+media work ..." ("kind of").</li><li><strong>Points at something the reader was not shown</strong>: "Anthem embodies the ethos of the community just
+like Ken's person-specific material does." (ans-173; the reader does not know Ken is Prof. Ueno);
+"Abe put so much of his uncompensated labor in ..." and "Vaporwave makes more money ..." (ans-86);
+"It lives as this nostalgic artifact, an mp3." (ans-132); "The ensemble closed the loop without me
+..." (ans-127).</li><li><strong>Your own later ruling</strong>: the "(see arrests c. 2012)" sentence of ans-173 (you corrected the year to
+2011); the software-pipeline sentence of ans-158 (you called it a non sequitur).</li><li><strong>No full stop, so nothing can follow it</strong>: the last sentence of ans-180 (the second line and the
+ephemera); "The old guard argues amongst itself" (ans-181).</li><li><strong>Two terms of art or more</strong>: "The premise is that the Social Aid and Pleasure model (we need
+Sakakeey here) maps onto Brown's closed loop." (ans-136); the Galbraith sentences of ans-62.</li><li><strong>Length</strong> (whole sentences that are fine, cut to stay under 1,500): "So the insight here is about
+persuasion." (ans-99); "Similarly, there may be insights I find in other communities that can pay of
+for my communities here." (ans-05); the band (artifact n-18, n-19, ans-146); "The score is like the
+Dungeon Master's screen" (ans-172); "Love Me (Long)" and "Total Abstration" (ans-183, from a letter to
+a recommender); the pitch-to-MIDI tools (ans-147); "My current idea is to write anthems and charter
+many nacent communities ..." (ans-123); "At the least I would credit my players as composers alongside
+myself." (ans-101).</li></ul>
+<h3>FOR ZACH:</h3>
+<ul><li>Q: The prompt ends "at Brown", and no sentence of yours names Brown, its music and multimedia
+program, Providence or a teacher there. What draws you to Brown in particular, and whom would you
+work with?</li><li>Q: Which ensemble plays your first score at Brown, and which Providence community comes to the
+open performances?</li><li>Q: The statement says "That's Steven Brown." and later "Brown's flow chart". A reader at Brown
+University has not been told who Steven Brown is. Who is he, in a clause, and which book?</li><li>Q: What does the multimedia side add that the band and the krewe could not do? Your sentence on it
+("a media work made by a group ... some kind of technological multimedia work") is from chat.</li><li>Q: Brown's dissertation is a work plus a paper of 100-120 pages. Is your "final portfolio" the work,
+and what is the paper?</li><li>E: The statement has two sentences that begin "The model is": the anthem (paragraph six) and the
+blend of devised work and notated instruction (paragraph eight). Read them together: do they say
+the same model?</li><li>E: Your thesis sentence sits as you typed it for the apply page: it starts lowercase, says "notation
+is produces", and ends without a full stop. Keep it that way here?</li><li>E: Read it start to finish: Todd, composing and the computer work, the Mardi Gras loop and
+Siddhartha, the woodwind book, founders who retire and Steven Brown, the anthem and Eris, care and
+abstention, the two semesters and the signal flow, the church, why leave. Does background-first
+carry, and what would you put back from the cut list?</li></ul>
+<p><a href="/apply/essays/">All essays, drafts for auditing</a></p>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>essays/harvard/draft-notes.md</h1>
+<p id=draft-note>Draft for auditing. Rendered from essays/harvard/draft-notes.md at 2bc4f41, 2026-11-25. Nothing here is submitted.</p>
+<h2>Harvard University: notes on the first draft of the statement and the personal statement</h2>
+<p>Structure is the agent's (2026-11-25, W-h1-25): the selection, the order, the headings, the
+notes. Every <code>&gt;</code> line below is yours: one whole sentence, copied verbatim from the node named in
+brackets (<code>present.</code> is vision/present.toml, <code>past.</code> vision/past.toml) or from the <code>&gt;</code> line of
+essays/core/bio-candidates.md at that line number. No sentence in prose.md is an agent's; the
+agent cut and ordered. tests/test_harvard_essay.py fails if prose.md is not exactly these lines,
+joined in this order, if any line is not a whole sentence of its source, if a sentence is used
+twice, or if either text runs over its limit.</p>
+<h3>The two texts in one file</h3>
+<p>Harvard asks for two texts (programs/harvard.toml <code>[prompts]</code>): the statement of purpose
+("should not exceed 1,000 words") and a separate personal statement ("no longer than 500
+words", which "should complement rather than duplicate" the statement; essays/harvard/cut.md
+header). check.py reads one prose.md, one paragraph per cluster marker, in outline order. So
+essay.toml now maps each cluster to one text and runs the outline text by text:</p>
+<pre>| text | markers, in order | words | limit |
+|---|---|---|---|
+| statement | c-02, c-03, c-04, c-05, c-06, c-09, c-10 | 976 | 1,000 |
+| personal | c-01, c-07, c-08 | 468 | 500 |</pre>
+<ul><li>The personal list was c-01, c-05, c-08. c-05 is the statement's method; c-07 (the woodwind
+parts) was in no prompt and joins Todd, as cut.md had already given the book to the personal
+statement.</li><li>essay.toml <code>[word_limits]</code> holds each text's limit, and check.py now counts each text alone
+against it (before, it counted the whole file against 1,000, which two texts cannot meet).</li><li>Paste each text into its own box: the statement is the first seven paragraphs, the personal
+statement the last three. Counts split on whitespace.</li><li>No sentence sits in both texts. Todd, the woodwind book and the church are in the personal
+statement only; Vaporwave, Siddhartha and the proposal in the statement only.</li></ul>
+<h4>What each paragraph answers</h4>
+<ul><li>Statement: c-02 reasons and motivations (the question, the founders' problem, the thesis
+sentence); c-03 to c-05 the research ambitions (the pleasure, the anthem, the guardrails, the
+method and what goes before the committee); c-06 the experiences that shaped them (Vaporwave,
+Siddhartha); c-09 past work in the field and related fields (the scores, computation); c-10
+why a PhD and why leave, then the nearest sentences you have to a career objective (see Gaps).</li><li>Personal: c-01 and c-07 the experiences (Todd; the woodwind book and "Chiasmus"); c-08 the
+church, what led to graduate school, and what you bring (joining, founding, training a
+replacement, teaching, belonging).</li></ul>
+<h3>Paragraphs: where each sentence came from</h3>
+<p>bio-candidates lines :139 and :140 are compositions/index.html:156 (note on Special Pleading, 2019).</p>
+<h4>Text <code>statement</code> (976 words)</h4>
+<h5>c-02 (138 words)</h5>
+<p>Sources in order: present.ans-175, present.ans-76, present.ans-111, present.ans-111, present.ans-111, present.ans-24, present.ans-45, present.ans-45, present.ans-174, present.ans-174.</p>
+<blockquote><p>I'm investigating how to use a team of professionals to kickstart a community of musicians that sustains itself. [present.ans-175]
+How can art bring people together to make more art that brings people together to make art? [present.ans-76]
+The idea is to create works that come alive and continue development out of my hands. [present.ans-111]
+It's an ethic. [present.ans-111]
+It creates a micro-polity. [present.ans-111]
+Krewe of Vaporwave, Krewe of Eris, the basic Mardi Gras loop is tried and true. [present.ans-24]
+I think a lot about organizations like this, how they often make or break when the founders seek to retire. [present.ans-45]
+Can they give up power with the confidence that the vision is protected? [present.ans-45]
+professionals teach amateurs the anthem, then amateurs meet and play the anthem and draft the future music with me. [present.ans-174]
+then I exit the loop when notation is produces without my hand once [present.ans-174]</p></blockquote>
+<h5>c-03 (156 words)</h5>
+<p>Sources in order: present.ans-62, present.ans-62, present.ans-62, present.ans-62, present.ans-119, present.ans-173, present.ans-180, present.ans-180, present.ans-180, present.ans-180, present.ans-136, present.ans-136.</p>
+<blockquote><p>I'm interested in things like loops that aren't purely just aesthetic, ritual loops, loops that talk about the passage of time, or that are productive in ways so that things ride on the loop. [present.ans-62]
+For example, communities that do charity activity, even though the core loop is recreational, that's the social aid and pleasure club. [present.ans-62]
+The pleasure makes the loop. [present.ans-62]
+The social aid rides the pleasure. [present.ans-62]
+The object of study is the anthem which is communication of an identity through performance. [present.ans-119]
+In this case the community-specific writing is for the decision making model represented by varying degrees of agency (adaptation) granted to the community members. [present.ans-173]
+They take on the identity of being "in" the thing. [present.ans-180]
+But being "in" Eris is slippery. [present.ans-180]
+It's unsanctioned, unpermitted, anyone can show up and play along. [present.ans-180]
+There are no floats. [present.ans-180]
+It's an open question whether I can coin a new identity. [present.ans-136]
+Right now, my assumption is to align with existing identities. [present.ans-136]</p></blockquote>
+<h5>c-04 (93 words)</h5>
+<p>Sources in order: present.ans-124, present.ans-124, present.ans-85, present.ans-02, present.ans-02, present.ans-94, present.ans-94, present.ans-94.</p>
+<blockquote><p>The performance of the anthem models the community's particular guardrails around adaptation. [present.ans-124]
+This is variable: concensus, elective monarchy, anarchy are all plausible principles that may organize the group. [present.ans-124]
+I'm not even sure manipulation and care are proper antonyms. [present.ans-85]
+There's something about non-compulsion. [present.ans-02]
+"Open and voluntary membership" should give individuals the freedom to break from the group. [present.ans-02]
+In the parade, my abstention is legible. [present.ans-94]
+I can refuse to join a chant, crucially. [present.ans-94]
+With the pressing of the music into a record, compression reduces the dynamic range, making my abstention inaudible, my silence is silenced. [present.ans-94]</p></blockquote>
+<h5>c-05 (152 words)</h5>
+<p>Sources in order: present.ans-158, present.ans-158, present.ans-157, present.ans-157, present.ans-157, present.ans-158, present.ans-138, present.ans-170.</p>
+<blockquote><p>The model is a blend of devised work and notated instruction. [present.ans-158]
+The workshop period begins with a score played by a professional ensemble. [present.ans-158]
+The first semester tests the recording to score pipeline with me in the loop. [present.ans-157]
+I hand build the scores while aligning the mechanism to reproduce the work. [present.ans-157]
+The next semester I hand off the scoring and mechanism, training others to run it. [present.ans-157]
+The goal is to develop a system that I can cleanly hand off to community members who have become stakeholders, trained on the approach, and with a motivation model that sustains the loop. [present.ans-158]
+The goal of year five is that the communication has been modified without me. [present.ans-138]
+A large multimedia work built from fragments of earlier iterations and built on lessons from them, built on relationships with players, venues, a broader community, and a written commentary on successes and failures with theory, all go before the committee [present.ans-170]</p></blockquote>
+<h5>c-06 (159 words)</h5>
+<p>Sources in order: present.ans-128, present.ans-21, present.ans-86, present.ans-86, present.ans-175, present.ans-22, present.ans-13, past.N077.</p>
+<blockquote><p>I have rounded that loop many times already, though it has never outlived me. [present.ans-128]
+Rick Snow put the grad students in touch with the krewe and we collaborated during Mardi Gras (Oedipus Max). [present.ans-21]
+Abe put so much of his uncompensated labor in over ten years that he handed off a thing that's core profitable. [present.ans-86]
+Vaporwave makes more money than it costs despite zero founder labor. [present.ans-86]
+In my opera Siddhartha, I worked with an ensemble of dancers and singers, professionals and amateurs, to develop the vocal and movement material for the second act. [present.ans-175]
+The professionals, paid by me, created the opportunity for the amateurs to have the elevated experience. [present.ans-22]
+Siddhartha was a good premise, I just didn't close the loop (church sold the building before I could spend my Jazz and Heritage Foundation Grant). [present.ans-13]
+These experiences have also led to my belief that composers are therefore responsible for creating the social dynamics we want to see in the broader world. [past.N077]</p></blockquote>
+<h5>c-09 (141 words)</h5>
+<p>Sources in order: past.N013, present.ans-175, present.ans-172, present.ans-182, present.ans-182, present.ans-182, present.ans-182, essays/core/bio-candidates.md:139, essays/core/bio-candidates.md:140.</p>
+<blockquote><p>With Prof. Ueno, I recognized that composers actively building relationships with performers <em>was</em> composition—just as much as inking the page. [past.N013]
+In my score for "By the time I see you in the morning", I worked with a mixed group of classical and jazz string players to produce an extended timbral palette, combining notation and verbal instruction to suit the players. [present.ans-175]
+In Astrocasper, I instruct the players to bow silently, misdirection for the listener. [present.ans-172]
+My piece '67 which I did both with Nouveaux Classical and at UNT in Denton, I used a vocoder patch with a coached ensemble. [present.ans-182]
+That's computation in the audio domain. [present.ans-182]
+In Film B, I use computation in the notation domain: generate score for players, render score from players. [present.ans-182]
+These are loops. [present.ans-182]
+For "Special Pleading," I developed a computer-assisted composition technique. [essays/core/bio-candidates.md:139]
+Using PureData, I explored the quarter-tone pitch space. [essays/core/bio-candidates.md:140]</p></blockquote>
+<h5>c-10 (137 words)</h5>
+<p>Sources in order: present.ans-07, present.ans-13, present.ans-05, present.ans-05, present.ans-114, present.ans-123, present.ans-59, present.ans-56.</p>
+<blockquote><p>I'm looking for a community of theorist, support for a longitudinal project, and generally a different environment to refresh my perspectives. [present.ans-07]
+From New Orleans, I understand that the work should be deeply embedded in community such that the makers and the patrons are all invested collectively in the expression. [present.ans-13]
+I need to figure out what elements of my theory are place specific, and which ones are transposable. [present.ans-05]
+Leaving here is essential for putting my hypothesis to the test. [present.ans-05]
+I will continue to come back for ritual loops like Carnival. [present.ans-114]
+My current idea is to write anthems and charter many nacent communities, bootstrapping to various intensities based on what initial work accomplishes. [present.ans-123]
+I think an earned-revenue non-profit is a good starting place. [present.ans-59]
+My bet is on what I know lasts: civic ritual, banding together, social aid and pleasure. [present.ans-56]</p></blockquote>
+<h4>Text <code>personal</code> (468 words)</h4>
+<h5>c-01 (106 words)</h5>
+<p>Sources in order: present.todd-01, present.todd-01, present.todd-01, present.todd-01, present.todd-01, present.todd-01, present.todd-01, present.todd-01, present.todd-01, present.todd-01.</p>
+<blockquote><p>In the Krewe of Eris, literacy is questioned, sometimes lampooned. [present.todd-01]
+I play the tuba. [present.todd-01]
+One of the best players in town Todd Burdock leads our section. [present.todd-01]
+He doesn't read; he plays by ear. [present.todd-01]
+I hate for my literacy to imply an automatic priority over embodied knowledge. [present.todd-01]
+He turned to me, not in submission but in confidence, that I could keep the memory. [present.todd-01]
+It's obviously beautiful when culture is transmitted mouth to ear: intimate. [present.todd-01]
+But that's also fragile. [present.todd-01]
+And for a founding-era member like Todd, it was hard to feel confident enough to stop shouldering the burden. [present.todd-01]
+The technology of notation proves its usefulness, it serves community. [present.todd-01]</p></blockquote>
+<h5>c-07 (129 words)</h5>
+<p>Sources in order: present.ans-44, present.ans-44, present.ans-44, present.ans-44, present.ans-44, present.ans-172, present.ans-172, present.ans-172.</p>
+<blockquote><p>One year I decided to bring in my friend Chiara who played the clarinet in highschool. [present.ans-44]
+As a labor of love, I transcribed the woodwind parts. [present.ans-44]
+I made a book for just for her, something private and intimate. [present.ans-44]
+When the other wind players got word of the book, they started coming to me and asking for copies: something in Eb perhaps. [present.ans-44]
+It served the community by opening it up to new amateurs bringing their love to the group. [present.ans-44]
+In "Chiasmus" transcribed for Eris, I wrote out the secret Latin choral part, but I whited out the noteheads and the lyrics. [present.ans-172]
+The material is still spaced to fit, but learning the music is left as an exercise for the player. [present.ans-172]
+You need to go to rehearsal and learn it socially. [present.ans-172]</p></blockquote>
+<h5>c-08 (233 words)</h5>
+<p>Sources in order: present.q8-open, present.q8-open, present.q8-open, past.N042, past.N042, present.q8-open, present.ans-05, present.ans-23, present.ans-23, present.ans-23, present.ans-23, present.ans-18, present.ans-06, present.ans-06, present.q8-open, past.N011.</p>
+<blockquote><p>I have the insight now of having worked in a church, providing music literally as a "service". [present.q8-open]
+I've seen how much music serves. [present.q8-open]
+I've seen how rituals facilitate a connectedness to the cosmos, to each other, to the self. [present.q8-open]
+Composing is my practice of spiritual and philosophical contemplation. [past.N042]
+This inquiry is only complete when it comes to life in my communities. [past.N042]
+Academically, I want to build on theories to make that potency legible. [present.q8-open]
+I need to see what's possible outside of here. [present.ans-05]
+I would certainly join where I fit in. [present.ans-23]
+I would also found one if I felt the opportunity was there (latent energy waiting to get shaped into a loop). [present.ans-23]
+I am not a cheerleader; I can't fire people up. [present.ans-23]
+I do, however, notice where the fire is already burning. [present.ans-23]
+As a leader, my goal is to always be training my replacement which is much easier said than done. [present.ans-18]
+As an educator, obviously on some level I know better than my students; that's why they take my classes. [present.ans-06]
+But even still, I aspire to not simply tell them what's good; rather, I try to give them the tools to determine for themselves what's good. [present.ans-06]
+I want to model for my peers the sense of responsibility I feel. [present.q8-open]
+I realize that belonging is an active process, that I have to work to achieve it by building the spaces in which it is possible. [past.N011]</p></blockquote>
+<h3>Newer sentences pulled in (not on the cut sheet of 2026-11-23)</h3>
+<p>From essays/core/apply.md and vision/present.toml (filed 2026-11-23 to 25): the proposal
+sentence ans-175 (opens the statement); the thesis sentence ans-174 as typed (closes c-02);
+ans-158 and ans-157 (the model and the first two semesters, as the apply page cuts them);
+ans-173's third sentence and ans-180's first four (the anthem and Eris); ans-170's last sentence
+(the portfolio and the written commentary before the committee, which answers the sheet's
+"What is the writing?"); ans-172 (Astrocasper; "Chiasmus"); ans-182 ('67, Film B). From before
+the sheet, by role: ans-123 (career), past.N042 and ans-06 (personal), bio-candidates :139-140.</p>
+<h3>The church sentence: cut</h3>
+<p>cut.md §7 had "We hold regular rehearsals at the church where I work as the music director."
+(artifact.r-14, the band page of 2023). It is cut. The CV dates the job 2022–24
+(cv/index.html:69, "First Unitarian Universalist Church of New Orleans", "Music Director"), and
+you said "church ended." in chat on 2026-11-22 (essays/core/bio-candidates.md:294). The present
+tense would contradict both. The personal statement keeps the church in your past-tense
+sentence: "I have the insight now of having worked in a church, providing music literally as a
+"service"." (q8-open).</p>
+<h3>Gaps (no sentence of yours yet)</h3>
+<ol><li><strong>Why now.</strong> No sentence of yours says what made you apply this year. The personal
+statement's slot holds the nearest: "Academically, I want to build on theories to make that
+potency legible." (q8-open) and "I need to see what's possible outside of here." (ans-05).</li><li><strong>Career objectives.</strong> The prompt asks for them "briefly"; no sentence of yours names a job
+or a kind of employer. c-10 closes on the nearest three: ans-123 (anthems and charters),
+ans-59 (an earned-revenue non-profit), ans-56 (your bet on civic ritual).</li><li><strong>Harvard.</strong> Neither text names Harvard, Creative Practice and Critical Inquiry, Cambridge or
+any of its faculty (check.py warns). No sentence of yours does.</li><li><strong>Where the proposal lands.</strong> "a professional ensemble" (ans-158) and the community are not
+named for Cambridge (the cut sheet's checklist: the Harvard Group for New Music; School of
+HONK, the Good Trouble Brass Band). Nothing of yours names one.</li><li><strong>The group you would join or found.</strong> c-08's "I would also found one" (ans-23): "one" is a
+group, and no Harvard or Cambridge group is named.</li><li><strong>Two sentences have no full stop.</strong> c-05 ends on ans-170 as you typed it ("... all go
+before the committee"). c-02 ends on the thesis sentence (ans-174: lowercase, "is produces").
+Each sits last in its paragraph so nothing runs on after it.</li><li><strong>Names the reader is not given.</strong> "Abe" (c-06), "Rick Snow" and "the krewe" (c-06: the
+Krewe of Vaporwave; c-02 names both Vaporwave and Eris before it), "Chiara" (c-07).</li><li><strong>One work, two names.</strong> c-09 has "By the time I see you in the morning" (ans-175) and then
+"Film B" (ans-182): the same score (commit a09ee4f); no sentence of yours says so.</li></ol>
+<h3>Cuts (from essays/harvard/cut.md and the nodes, and why)</h3>
+<ul><li><strong>Length</strong> (whole sentences that are fine, cut to stay under 1,000): the string band (the
+"music director since 2020" line, bio-candidates.md:256; artifact.n-19; ans-146 "I'm the
+master and I solved the modulations ..."); ans-21 "It required a social hero like Rick Snow to
+see the connection and plug us in."; ans-170 "Lessons learned from earlier seasons will inform
+the ultimate season."; artifact.n-09 (Lilypond permutations; the piece, Tresse, is not named
+in it); ans-120's "I'm going to land in a place." and the two sentences after it; ans-133 (the
+final portfolio; ans-170 carries the portfolio and the writing).</li><li><strong>Points at something the reader was not shown, or garbled</strong>: ans-73 "boots, draft" (the
+transcript's bootstrap); ans-128's "two examples of that loop" (the two are not named);
+ans-127 "The ensemble closed the loop without me ..."; past.N054 ("However", "this feeling of
+sanctuary"); past.N037 (the 2019 "I argue the opposite", with its footnote marker); ans-132
+"It lives as this nostalgic artifact, an mp3." (the song is not named).</li><li><strong>Two or more terms of art, or a note to self</strong>: ans-99 (senders, recipients); ans-119's
+second and third sentences; ans-136's first three (the Social Aid and Pleasure premise with
+"(we need Sakakeey here)", and "Brown", another program's name); ans-142 and ans-144.</li><li><strong>Chat</strong>: ans-144p "What I'm proposing is that ..." (bin/prose-gaps CHAT; ans-175 is the
+newer proposal sentence); ans-69 ("I mean", "kind of"); ans-70 ("some kind of"); ans-140 (a
+list, not a sentence).</li><li><strong>Speaks to one reader</strong>: ans-173 "Anthem embodies the ethos of the community just like Ken's
+person-specific material does." (Ken is not introduced in the statement); the letter openers
+of ans-175 and ans-183.</li><li><strong>Your own later ruling</strong>: the "This Will Be Our Year" line (ans-131, opens "adaptation:");
+ans-173's last sentence ("c. 2012", corrected to 2011 in ans-178); ans-181 "The old guard
+argues amongst itself" (no full stop, nothing before it); ans-180's last sentence (no full
+stop); ans-158's software-pipeline sentence (you called it a non sequitur).</li><li><strong>Present tense the CV contradicts</strong>: artifact.r-14 (above).</li><li><strong>In the other text</strong>: todd-01, ans-44, ans-172's "Chiasmus" and q8-open stay in the
+personal statement; nothing of them is in the statement.</li></ul>
+<h3>Spelled as you wrote them</h3>
+<p>concensus (ans-124), theorist (ans-07), nacent (ans-123), "is produces" (ans-174), "for just
+for her" (ans-44), highschool (ans-44), "Nouveaux Classical" (ans-182; the CV says "Nouveau
+Classical Project").</p>
+<h3>FOR ZACH</h3>
+<ul><li>Q: Neither text says why you are applying now. What happened that made this the year?</li><li>Q: Harvard asks, briefly, for your career objectives. The statement closes on your anthems
+and charters, an earned-revenue non-profit, and your bet on civic ritual. What job or kind of
+work do you see after the degree?</li><li>Q: Neither text names Harvard, Cambridge or a teacher there. Whom would you name, and what in
+their work draws you?</li><li>Q: Which ensemble plays your first score in Cambridge, and which group there would you join
+or found?</li><li>E: Your 2023 band page says you rehearse "at the church where I work as the music director".
+The CV says the job ran 2022–24 and you said the church ended, so that sentence is cut. Is
+that right, and is the string band still running?</li><li>E: Two sentences end without a full stop, as you typed them: the thesis sentence
+("... without my hand once") and the portfolio sentence ("... all go before the committee").
+Keep them that way?</li><li>Q: A reader meets Abe, Rick Snow, "the krewe" and Chiara with no word on who they are. Who
+are they, in a clause?</li><li>E: The string band was cut from the statement for length. Read both texts start to finish:
+what would you put back, and what would you take out for it?</li></ul>
+<p><a href="/apply/essays/">All essays, drafts for auditing</a></p>
+</body>
+</html>

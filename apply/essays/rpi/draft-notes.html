@@ -1,0 +1,137 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>essays/rpi/draft-notes.md</h1>
+<p id=draft-note>Draft for auditing. Rendered from essays/rpi/draft-notes.md at 6c78166, 2026-11-25. Nothing here is submitted.</p>
+<h2>Rensselaer Polytechnic Institute: notes on the first draft of both texts</h2>
+<p>Agent notes (2026-11-25, W-h1-27), not part of either text. <code>prose.md</code> holds only your sentences,
+copied whole and verbatim from the nodes named below (<code>present.</code> is vision/present.toml, <code>past.</code> is
+vision/past.toml, <code>artifact.</code> is vision/artifact.toml; a bare <code>ans-</code> or <code>todd-</code> id is <code>present.</code>). The
+agent chose which sentences, their order and the cuts; it wrote none of them. The selection starts
+from essays/rpi/cut.md and pulls in the newer sentences on the apply page (essays/core/apply.md).
+<code>tests/test_rpi_essay.py</code> walks every paragraph against this list and fails if a sentence is not a
+whole sentence of the node cited for it, if a sentence appears in both texts, or if the proposal
+runs over 1,300 words.</p>
+<h3>Two texts in one file</h3>
+<p>RPI asks for two texts (programs/rpi.toml <code>[prompts]</code>). check.py reads one prose.md, one paragraph
+per cluster marker, in outline order, so essay.toml maps each marker to one text and runs the
+outline text by text:</p>
+<pre>| text | prompt | markers | words | limit |
+|---|---|---|---|---|
+| `statement` | "Statement of Background and Goals" | s-01 to s-08 | 777 | none given (programs/rpi.toml `open`); the cut sheet aimed at 800 |
+| `proposal` | "Research Proposal (up to 3 pages)" | p-01 to p-09 | 1,288 | 3 pages: about 2.5 pages single-spaced; held under 1,300 by the test |</pre>
+<p>Counts split on whitespace. The c-01 to c-10 clusters stay in essay.toml as the core-synced pool the
+worksheet and the cut sheet were built from; they are in no prompt and not in the outline. To paste
+into the portal: the statement is the s- paragraphs, the proposal the p- paragraphs; the markers
+are not pasted.</p>
+<h3>Paragraphs: the node of each sentence, in order</h3>
+<h4>Statement of Background and Goals (777 words)</h4>
+<pre>| marker | role | words | sentences, in order |
+|---|---|---|---|
+| s-01 | background: training and practice | 127 | past.N042 ×2, past.N013, ans-175, ans-21 ×3 |
+| s-02 | background: Todd; founders who retire | 111 | todd-01 ×7 (its sentences 1, 3, 4, 5, 15, 19, 20), ans-45 ×2 |
+| s-03 | background: the woodwind book, "Chiasmus" | 153 | ans-44 ×5, ans-45 ×2, ans-172 ×3 |
+| s-04 | background: the software, '67, Film B | 88 | artifact.n-18, artifact.n-09, ans-182 ×5 |
+| s-05 | background: the church | 77 | q8-open ×3, past.N077, q8-open |
+| s-06 | academic and research interests | 61 | ans-76, ans-111 ×3, ans-74 ×2 |
+| s-07 | future career goals | 57 | ans-59, ans-23 ×3, ans-56 |
+| s-08 | degree and fit: why a PhD, why leave | 103 | ans-07, ans-02, ans-101, q8-open, ans-05 ×2, ans-114 |</pre>
+<h4>Research Proposal (1,288 words)</h4>
+<pre>| marker | role | words | sentences, in order |
+|---|---|---|---|
+| p-01 | question; the proposal and the thesis sentence | 170 | ans-99 ×7, ans-119 ×3, ans-175, ans-174 ×2 |
+| p-02 | problem and hypothesis | 243 | ans-128, ans-24, ans-86 ×2, ans-62 ×4, ans-63, ans-104 ×2, ans-136 ×3 |
+| p-03 | the model: the anthem, Eris, what it holds variable | 175 | ans-173 ×3, ans-180 ×4, ans-124 ×3, ans-137 ×2, ans-139 |
+| p-04 | method: the open performance | 162 | ans-158 ×2, ans-142 ×3, ans-120 ×2, ans-142 ×4, ans-144 ×2, ans-142 |
+| p-05 | method: the technology, the first two semesters | 152 | ans-147 ×2, ans-94 ×3, ans-145 ×2, ans-157 ×3 |
+| p-06 | periodicity | 93 | ans-148 ×4, ans-149 ×4 |
+| p-07 | measures and end state | 88 | ans-158, ans-120, ans-122, ans-138 ×2 |
+| p-08 | prior work: the band, Siddhartha | 99 | artifact.n-19, ans-146, ans-175, ans-22, ans-13 |
+| p-09 | outcome: the dissertation | 106 | ans-123 ×2, ans-126 ×2, ans-133 |</pre>
+<p>Pulled in beyond the cut sheet: from the apply page, ans-175 (the proposal sentence, Siddhartha,
+"By the time I see you in the morning"), ans-174 (the thesis sentence, as typed), ans-173 and
+ans-180 (the model), ans-158 (the model, the workshop, the goal), ans-157 (the first two
+semesters); and ans-182 ('67, Film B), ans-172 ("Chiasmus"), ans-99's sentences around its
+question ("That's Steven Brown." and the four beside it), ans-62's social aid and pleasure club,
+ans-94's compression sentence, ans-24's Mardi Gras loop, ans-44's "I made a book".</p>
+<p>The synthesis rules: ans-136's premise sentence, which carries "(we need Sakakeey here)" and
+"Brown's closed loop", is cut whole. The one other sentence that says "Brown's" (ans-145, "model
+Brown's flow chart", p-05) comes after "That's Steven Brown." (p-01). No other program is named.</p>
+<h3>Gaps: what no sentence of yours answers</h3>
+<ul><li><strong>Why RPI.</strong> Neither text names RPI, Rensselaer, Electronic Arts, EMPAC or Troy; check.py warns
+on it. No sentence of yours names any of them.</li><li><strong>Who you would study with.</strong> No sentence names Matthew Goodheart, Rob Hamilton, Igor Vamos or
+anyone else at RPI. The nearest lines are already in: gaming and the play loop (s-06, near
+Hamilton's games appointment); improvisation inside a collective practice (s-08, near Goodheart).</li><li><strong>Where the proposal lands.</strong> p-04 still says "(of whatever ensemble the school has to work
+with)". No sentence names the ensemble that plays the first score, or the community that comes
+to the open performances.</li><li><strong>A job.</strong> s-07 describes the company (an earned-revenue non-profit, the founder position); no
+sentence names a career after the degree, which the institute's page asks for.</li><li><strong>The text half of the dissertation.</strong> RPI's dissertation is "Artwork that is presented publicly"
+and "A text that describes and situates the work". p-09 names the portfolio; no sentence names
+the text.</li><li><strong>Weekly.</strong> The only sentence that says the open performances are weekly opens "What I'm proposing
+is that" (chat, cut); the draft says only "The next week, masters play ...".</li><li><strong>Where you trained.</strong> The statement names Prof. Ueno but no school; your one Berkeley sentence
+points at "this piece" without naming it (cut).</li><li><strong>What would count against the hypothesis.</strong> Your sentences on it are chat (cut sheet Agent
+question 4).</li><li><strong>Names the reader is not given.</strong> "Ken" (p-03), "Abe" (p-02), "the krewe" (s-01: the Krewe of
+Vaporwave, but the reader meets Eris next), "Brown's flow chart" (p-05: the chart is not shown).</li></ul>
+<h3>Cuts, and why</h3>
+<ul><li><strong>The synthesis's cuts</strong>: ans-136's premise sentence ("(we need Sakakeey here)", "Brown's closed
+loop").</li><li><strong>Chat</strong> (bin/prose-gaps's list, or a transcript opener): "What I'm proposing is that I will host
+weekly open performances ..."; "I mean, currently I'm working on a lily pond to Ableton kind of
+pipeline."; "It's a media work made by a group, essentially a band, some kind of technological
+multimedia work." and "That has a live component and a virtual component." after it; "Yes, or
+immersive public theatre, civic theatre ..." (also no full stop); "Like are you having fun?";
+ans-173's first sentence ("replace this with ...").</li><li><strong>Fragments or no closing sentence</strong>: "Recorded minutes, minutes performed, self-identified
+members."; the last Eris sentence (the second line and the ephemera) and "The old guard argues
+amongst itself", which have no full stop and cannot sit before another sentence.</li><li><strong>Points at something the reader was not shown</strong>: "I wrote this piece for the end-of-semester
+Undergraduate Composers Club at Berkeley." ("this piece"); "I have two examples of that loop
+returning with an artifact ..." (neither is named); "And then the hard part is how to go from the
+boots, draft, founder period into a closed loop."; "They're not passive ..." and "They can
+actually press buttons, make choices." (a game's players, not named in the kept sentences);
+"Squeeze up until the big parade day." and "Explode to drive the piston ..." (their Mardi Gras
+loop moved to the proposal); "We raise the noise floor, in this case." (the sentence before it is
+lowercase chat); "The ensemble closed the loop without me ... why?"; "Notation is basically
+software for the Music and Manipulation machine." and "Self-improving systems are even better
+than static ones." (a book the reader is not given).</li><li><strong>Says what a kept sentence says</strong>: "Siddhartha was a community I had to build." and "It did not
+itself close the loop." (ans-13 keeps the reason); "The identity exists before the anthem." and
+"The performance of the anthem identifies the identity to the recipients." (your revision of
+ans-119's second sentence; the apply page still carries ans-119, so the draft does; your call).</li><li><strong>Length</strong> (whole sentences that are fine, cut to keep the proposal under 1,300 words):
+Siddhartha's three structures (orthodoxy, aesceticism, hedonism); "It's a bit like the ship of
+thesis or evolution ..."; "It lives as this nostalgic artifact, an mp3."</li><li><strong>Your own later ruling</strong>: "The thesis is that Eris ... (see arrests c. 2012)" waits on the date
+you corrected to 2011; ans-158's software-pipeline sentence, which you called a non sequitur.</li></ul>
+<h3>FOR ZACH:</h3>
+<ul><li>Q: Neither text names RPI, Electronic Arts, EMPAC or Troy. Why RPI, in a sentence or two?</li><li>Q: Who at RPI do you want to work with (the program lists Matthew Goodheart, Rob Hamilton and Igor
+Vamos), and what in their work?</li><li>Q: Which ensemble plays your first score in Troy, and which community comes to the open
+performances? The proposal still reads "of whatever ensemble the school has to work with".</li><li>Q: What job, or what work, after the degree? The career paragraph describes the company but names
+no job.</li><li>Q: RPI's dissertation is an artwork plus a text about it. The proposal names the portfolio; what is
+the text?</li><li>Q: The proposal never says the open performances are weekly; your one sentence that does starts
+"What I'm proposing is that", which reads as chat. Keep it anyway, or say it another way?</li><li>Q: The statement names Prof. Ueno but not where you studied. Your Berkeley sentence says "I wrote
+this piece for the end-of-semester Undergraduate Composers Club at Berkeley." Which piece?</li><li>Q: On the anthem, the draft keeps "The recipients of that identity are persuaded to perform a
+social function through the motivation of identification." You later wrote "The identity exists
+before the anthem." Which one stays?</li><li>Q: Ken (the anthem paragraph), Abe (the Vaporwave sentence) and "the krewe" in the Rick Snow
+sentence (Vaporwave, though the reader meets Eris next) arrive unexplained. Who are they, in a
+clause? And should "Brown's flow chart" name the book?</li><li>E: Your thesis sentence ends the proposal's first paragraph as you typed it: lowercase, "notation
+is produces", no full stop. Keep it that way here?</li><li>E: The proposal is 1,288 words, about two and a half pages single-spaced. Double-spaced, it must
+lose about 500 words. Which spacing?</li><li>E: Read both texts start to finish. Does the order carry, and what would you put back from the cut
+list?</li></ul>
+<p><a href="/apply/essays/">All essays, drafts for auditing</a></p>
+</body>
+</html>
