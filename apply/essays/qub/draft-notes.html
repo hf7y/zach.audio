@@ -1,0 +1,162 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>essays/qub/draft-notes.md</h1>
+<p id=draft-note>Draft for auditing. Rendered from essays/qub/draft-notes.md at a5251ab, 2026-11-25. Nothing here is submitted.</p>
+<h2>Queen's University Belfast: notes on the first draft of both texts</h2>
+<p>Agent notes (2026-11-25, W-h1-41), not part of either text. <code>prose.md</code> holds only your sentences,
+copied whole and verbatim from the nodes named below (<code>present.</code> is vision/present.toml, <code>past.</code> is
+vision/past.toml, <code>artifact.</code> is vision/artifact.toml; a bare <code>ans-</code> or <code>q8-</code> id is <code>present.</code>). The
+agent chose which sentences, their order and the cuts; it wrote none of them. Until today prose.md
+was bin/prose-draft's raw join of every node in c-01 to c-10 (7,468 words, chat turns and all). The
+selection starts from essays/qub/worksheet.md (c-02 to c-05 for the proposal) and pulls in newer
+sentences: the apply page (essays/core/apply.md) and the nodes filed since 2026-11-23.
+<code>tests/test_qub_essay.py</code> walks every paragraph against this list and fails if a sentence is not a
+whole sentence of the node cited for it, if a sentence appears in both texts, if the proposal runs
+over 2,000 words, or if the statement leaves 150 to 300.</p>
+<h3>Two texts in one file</h3>
+<p>QUB has no application form for these: the first step is an email to one SARC supervisor with a CV,
+a short statement (wish to study for a PhD, start date, funding plan) and a brief outline of research
+question and method (programs/qub.toml <code>[prompts]</code>, paraphrased there). check.py reads one prose.md,
+one paragraph per marker, in outline order, so essay.toml maps each marker to one text and runs the
+outline in the email's order:</p>
+<pre>| text | prompt | markers | words | limit |
+|---|---|---|---|---|
+| `statement` | "a short statement of wish to study for a PhD, start date and funding plan" (paraphrased) | s-01 to s-03 | 254 | none found; the test holds it to 150-300 |
+| `research_proposal` | "brief outline of research question and method" (paraphrased) | p-01 to p-11 | 1,921 | 2,000: the university-wide guide's "no more than 2000 words (excluding references)", search text only, page not opened (programs/qub.toml `open`); essay.toml `[word_limits]` |</pre>
+<p>Counts split on whitespace. The c-01 to c-10 clusters stay in essay.toml as the core-synced pool
+the worksheet was built from; they are in no prompt and not in the outline. c-10 is unmapped: its
+first node is your answer about Chicago ("I'm interested in Chicago as like a larger city ..."), and
+no sentence of it is used. To paste into the email: the statement is the s- paragraphs, the proposal
+the p- paragraphs; the markers are not pasted.</p>
+<h3>Paragraphs: the node of each sentence, in order</h3>
+<h4>Statement (254 words)</h4>
+<pre>| marker | role | words | sentences, in order |
+|---|---|---|---|
+| s-01 | the practice; New Orleans; the founder | 81 | past.N042 ×2, ans-13, ans-23 ×3 |
+| s-02 | the church; what you want from study | 64 | q8-open ×5 |
+| s-03 | why a PhD, why leave | 109 | ans-07, ans-05 ×5, ans-114 |</pre>
+<h4>Research proposal (1,921 words)</h4>
+<pre>| marker | role | words | sentences, in order |
+|---|---|---|---|
+| p-01 | question; the proposal and the thesis sentence | 145 | ans-99 ×7, ans-100 ×2, ans-175, ans-174 ×2 |
+| p-02 | problem: the founder and the loop | 162 | ans-128, ans-24 ×2, ans-86 ×2, ans-24 ×2, ans-45 ×2, ans-13 ×4 |
+| p-03 | hypothesis: identification; the pleasure makes the loop; the premise | 267 | ans-62 ×10, ans-63, ans-104 ×2, ans-143, ans-136 ×3 |
+| p-04 | the model: the anthem, Eris, what it holds variable | 292 | ans-119 ×3, ans-173 ×3, ans-180 ×4, ans-107 ×5, ans-124 ×3, ans-137 ×2, ans-139 |
+| p-05 | criterion: care, exclusion, manipulation | 152 | ans-54, ans-15 ×4, ans-91, ans-85 ×4 |
+| p-06 | method: the open performance; the question that governs the feedback | 265 | ans-158 ×2, ans-142 ×3, ans-120 ×2, ans-142, ans-107 ×3, ans-142 ×3, ans-164 ×3, ans-144 ×2, ans-142 |
+| p-07 | method: the technology; the first two semesters | 152 | ans-147 ×2, ans-94 ×3, ans-145 ×2, ans-157 ×3 |
+| p-08 | periodicity | 93 | ans-148 ×4, ans-149 ×4 |
+| p-09 | measures and end state | 117 | ans-158, ans-120, ans-122, ans-137, ans-138 ×2 |
+| p-10 | prior work: the band, Siddhartha, Film B | 120 | artifact.n-19, ans-146, ans-175, ans-22, ans-13, ans-182 ×2 |
+| p-11 | outcome: the portfolio and the written commentary | 156 | ans-123 ×2, ans-126 ×2, ans-133, ans-170 ×2 |</pre>
+<p>Which sentence of a node each one is (0 = the node's first sentence, split after . ? !): s-01
+N042 0-1, ans-13 6, ans-23 2-4; s-02 q8-open 3-7; s-03 ans-07 0, ans-05 0, 4, 5, 6, 8, ans-114 0;
+p-01 ans-99 0, 4-9, ans-100 8-9, ans-175 1, ans-174 0-1; p-02 ans-128 1, ans-24 0, 4, ans-86 0-1,
+ans-24 6-7, ans-45 0-1, ans-13 8-11; p-03 ans-62 17-26, ans-63 8, ans-104 0-1, ans-143 0, ans-136 2-4;
+p-04 ans-119 0-2, ans-173 1-3, ans-180 0-3, ans-107 13-17, ans-124 0-2, ans-137 2-3, ans-139 1;
+p-05 ans-54 0, ans-15 2-5, ans-91 8, ans-85 1-4; p-06 ans-158 0-1, ans-142 0, 1, 3, ans-120 2-3,
+ans-142 6, ans-107 1, 2, 6, ans-142 4, 5, 10, ans-164 2, 3, 5, ans-144 1, 4, ans-142 11; p-07 ans-147
+0, 2, ans-94 2-4, ans-145 4-5, ans-157 0-2; p-08 ans-148 0-3, ans-149 7, 10, 11, 13; p-09 ans-158 4,
+ans-120 4, ans-122 2, ans-137 4, ans-138 3-4; p-10 n-19 0, ans-146 1, ans-175 3, ans-22 4, ans-13 2,
+ans-182 2-3; p-11 ans-123 0-1, ans-126 0-1, ans-133 0, ans-170 1-2.</p>
+<p>Pulled in beyond c-02 to c-05: from the apply page, ans-175 (the proposal sentence; Siddhartha),
+ans-174 (the thesis sentence, as typed), ans-173 and ans-180 (the model), ans-158 (the model, the
+workshop, the goal), ans-157 (the first two semesters); from the newer nodes, ans-164 (what governs
+the feedback; facts about pleasure; repeated iteration), ans-170 (the ultimate season and the written
+commentary before the committee), ans-182 (Film B); for the statement, past.N042, ans-13's New
+Orleans sentence, ans-23 (the founder position), q8-open, ans-114. The proposal shares its spine with
+the RPI draft (essays/rpi/prose.md) and differs in p-05 (care), p-06's three ans-164 questions, the
+Anthem for Eris sentences of ans-107, p-11's commentary, and the statement.</p>
+<h3>Gaps: what no sentence of yours answers</h3>
+<ul><li><strong>The supervisor.</strong> Neither text names Queen's, SARC, Belfast or anyone there; check.py warns
+that the prose never names Queen's University Belfast. The first email goes to one supervisor
+(programs/qub.toml lists Pedro Rebelo, John D'Arcy, Paul Stapleton, Simon Waters and others), and
+no sentence of yours names one or says why.</li><li><strong>The start date.</strong> The statement is meant to give one. Nothing of yours does.</li><li><strong>The funding plan.</strong> The statement is meant to give one. Nothing of yours does. The route open
+to international students (Queen's AHRC Landscape, deadline 14 January 2027) requires living in the
+UK near Queen's for the whole award (research/jan-qub-uva.md §5); nothing of yours says whether
+you would.</li><li><strong>Where the proposal lands.</strong> p-06 still says "(of whatever ensemble the school has to work with)".
+No sentence names the ensemble that plays the first score, or the Belfast community that comes to
+the open performances.</li><li><strong>The length of the degree.</strong> p-09 ends "The goal of year five is that the communication has been
+modified without me." The Landscape award runs three and a half years and the Harrison scholarship
+three (research/jan-qub-uva.md §5). No sentence of yours sets the goal inside that.</li><li><strong>Weekly.</strong> The only sentence that says the open performances are weekly opens "What I'm proposing
+is that" (cut as chat); the draft says only "The next week, masters play ...".</li><li><strong>What would count against the hypothesis.</strong> Your one sentence on it, "In five years, if i have
+closed no loops, that doesn't say anything", is chat with no full stop (cut).</li><li><strong>The written analysis.</strong> QUB's practice-based PhD pairs the portfolio with a written critical
+analysis of up to 60,000 words (search text of the Study Regulations). p-11's last sentence names "a
+written commentary on successes and failures with theory"; nothing says more.</li><li><strong>Names the reader is not given.</strong> "Ken" (p-04), "Abe" (p-02), "Krewe of Vaporwave" and "Eris"
+(p-02, p-04: the reader is not told they are New Orleans Mardi Gras krewes), "Film B" (p-10), "Jazz
+and Heritage Foundation" (p-10), "Brown's flow chart" (p-07; Steven Brown is named in p-01, the chart
+is not shown).</li><li><strong>The links.</strong> QUB asks for 3-5 links to online work with how each relates to the proposal; that is
+W-h1-42, not this draft.</li></ul>
+<h3>Cuts, and why</h3>
+<ul><li><strong>The synthesis's rules.</strong> c-10 unmapped; ans-72 (the Chicago answer) used nowhere. Chat turns cut
+whole: "Got it." (ans-99), "Give me some other ideas." and "Do you have other ideas?" (ans-69),
+"Yeah so this is what I'm stumped on." (ans-13), "That's plausible." (ans-128), "What am I saying?"
+and "I'm going to land in a place." (ans-120), "Something like that." and "Does that sharpen?"
+(ans-164), "Tough question." (ans-05), ans-173's first sentence ("replace this with ...").</li><li><strong>Your premise sentence with the note in it</strong>: ans-136's first sentence ("(we need Sakakeey here)",
+"Brown's closed loop").</li><li><strong>Chat</strong> (bin/prose-gaps's list, or addressed to the assistant): "What I'm proposing is that I will
+host weekly open performances ..." (ans-144); "Like, I'm an emo kid." (ans-62); ans-66 ("Is this,
+is something annoying about this question?"); ans-65 ("You tell me what's missing."); ans-68 ("This
+is what I need to figure out."); ans-70 ("I don't know. I mean, am I really, ..."); ans-73 (spoken,
+"Like it created a temporary community."); ans-74 ("Like are you having fun?"); ans-78; ans-88
+("&lt;&lt;&lt;"); ans-106 ("this is not quite it."); ans-127 ("Yes, I'm out of the loop."); ans-138's "Do I
+need to justify my design constraints though?"; ans-142's two sentences with "(c.f. galbraith?)"
+and "(palimpsest?)"; ans-122's "Yes exit test ...".</li><li><strong>Fragments or no closing full stop</strong>: "Recorded minutes, minutes performed, self-identified
+members." (ans-140); "Dependent versus independent variables." (ans-138); ans-77 ("Yes, or immersive
+public theatre ..."); ans-180's last sentence (the second line and the ephemera) and ans-181 ("The
+old guard argues amongst itself"), which cannot sit before another sentence; ans-86's Tom Sawyer
+sentence.</li><li><strong>Opens on something the reader was not shown</strong>: "It's that the music creates the motivation for
+more of itself." (ans-62; "It's that" follows "That's the music and manipulation flowchart.", cut with the
+Galbraith sentences before it); "That's Brown
+and Galbraith." (ans-164; Galbraith is not introduced in the kept text); ans-128's "I have two
+examples of that loop ..." (neither is named); ans-171's "I write the next piece by varying what
+feeds back ..." (ends on "the "brings back"", which points at the thesis sentence ans-174 replaced).</li><li><strong>Your own later ruling</strong>: ans-173's "The thesis is that Eris ... (see arrests c. 2012)" waits on
+the date you corrected to 2011; ans-158's software-pipeline sentence, which you called a non
+sequitur.</li><li><strong>Length, and the statement's size</strong> (whole sentences that are fine, left out to keep the proposal
+under 2,000 and the statement short): Todd and the elder singer (todd-01, all of c-01); the record
+of c-06 (ans-105's run through Vaporwave, Siddhartha, Film B, the Palestine band and Eris; ans-21's
+Rick Snow; ans-131, ans-132, ans-55, ans-101); craft (c-09: ans-103, ans-92); the Brown and
+Galbraith terms of ans-62, ans-87, ans-137 and ans-144; Babbitt (ans-90, ans-91's opening); the
+Palestine band (ans-80, ans-106); Wark and the hacker (ans-100's middle); ans-107's whistling and
+national-anthem sentences; the play loop and the staging of Siddhartha (ans-74); "It's a bit like
+the ship of thesis or evolution ..." (ans-139).</li></ul>
+<h3>FOR ZACH:</h3>
+<ul><li>Q: Whom do you write to first at Queen's, and why them? Neither text names Queen's, SARC, Belfast
+or anyone there. On file: John D'Arcy (runs the HIVE Choir, participatory song-making) and Pedro
+Rebelo (directs SARC, participatory projects in Belfast), among others.</li><li>Q: What start date and what funding plan go in the email? The statement is meant to carry both and
+nothing you have said gives either. The one funded route open to you closes 14 January 2027 and
+requires living in the UK near Queen's for the whole award. Would you?</li><li>Q: Which ensemble plays your first score in Belfast, and who are the amateurs who come to the open
+performances? The proposal still reads "of whatever ensemble the school has to work with".</li><li>Q: The proposal says "The goal of year five". A Queen's PhD funded by the Landscape award runs three
+and a half years. Which year is the goal?</li><li>Q: The proposal never says the open performances are weekly; your one sentence that does starts
+"What I'm proposing is that", which reads as chat. Keep it anyway, or say it another way?</li><li>Q: Ken, Abe, Film B, the Jazz and Heritage Foundation and "Brown's flow chart" arrive unexplained,
+and nothing says Vaporwave and Eris are Mardi Gras krewes. Who or what is each, in a clause?</li><li>E: The proposal is 1,921 words against the only figure on file, 2,000 (search text of the
+university's guide, not a page anyone opened). The email asks for a "brief outline". Send this much
+in a first email, or a shorter cut?</li><li>E: Your thesis sentence sits at the end of the proposal's first paragraph as you typed it
+(lowercase, "notation is produces", no full stop), and the proposal ends on your committee sentence,
+also without a full stop. Keep both as they are?</li><li>E: The 254-word statement leaves out Todd and the woodwind book. Read it: does it say why you want
+the PhD, and what would you put back?</li><li>E: Read both texts start to finish. Does the order carry, and what would you put back from the cut
+list?</li></ul>
+<p><a href="/apply/essays/">All essays, drafts for auditing</a></p>
+</body>
+</html>
