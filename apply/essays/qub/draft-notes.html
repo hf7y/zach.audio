@@ -23,7 +23,7 @@
 	</nav>
 </header>
 	<h1>essays/qub/draft-notes.md</h1>
-<p id=draft-note>Draft for auditing. Rendered from essays/qub/draft-notes.md at 7572716, 2026-11-25. Nothing here is submitted.</p>
+<p id=draft-note>Draft for auditing. Rendered from essays/qub/draft-notes.md at 0e008fd, 2026-11-25. Nothing here is submitted.</p>
 <h2>Queen's University Belfast: notes on the first draft of both texts</h2>
 <p>Agent notes (2026-11-25, W-h1-41), not part of either text. <code>prose.md</code> holds only your sentences,
 copied whole and verbatim from the nodes named below (<code>present.</code> is vision/present.toml, <code>past.</code> is
@@ -43,7 +43,7 @@ one paragraph per marker, in outline order, so essay.toml maps each marker to on
 outline in the email's order:</p>
 <pre>| text | prompt | markers | words | limit |
 |---|---|---|---|---|
-| `statement` | "a short statement of wish to study for a PhD, start date and funding plan" (paraphrased) | s-01 to s-03 | 254 | none found; the test holds it to 150-300 |
+| `statement` | "a short statement of wish to study for a PhD, start date and funding plan" (paraphrased) | s-01 to s-03 | 270 | none found; the test holds it to 150-300 |
 | `research_proposal` | "brief outline of research question and method" (paraphrased) | p-01 to p-11 | 1,921 | 2,000: the university-wide guide's "no more than 2000 words (excluding references)", search text only, page not opened (programs/qub.toml `open`); essay.toml `[word_limits]` |</pre>
 <p>Counts split on whitespace. The c-01 to c-10 clusters stay in essay.toml as the core-synced pool
 the worksheet was built from; they are in no prompt and not in the outline. c-10 is unmapped: its
@@ -51,12 +51,12 @@ first node is your answer about Chicago ("I'm interested in Chicago as like a la
 no sentence of it is used. To paste into the email: the statement is the s- paragraphs, the proposal
 the p- paragraphs; the markers are not pasted.</p>
 <h3>Paragraphs: the node of each sentence, in order</h3>
-<h4>Statement (254 words)</h4>
+<h4>Statement (270 words)</h4>
 <pre>| marker | role | words | sentences, in order |
 |---|---|---|---|
 | s-01 | the practice; New Orleans; the founder | 81 | past.N042 ×2, ans-13, ans-23 ×3 |
 | s-02 | the church; what you want from study | 64 | q8-open ×5 |
-| s-03 | why a PhD, why leave | 109 | ans-07, ans-05 ×5, ans-114 |</pre>
+| s-03 | why a PhD, why leave | 125 | ans-07, ans-05 ×4, ans-03, ans-05, ans-114 |</pre>
 <h4>Research proposal (1,921 words)</h4>
 <pre>| marker | role | words | sentences, in order |
 |---|---|---|---|
@@ -72,7 +72,7 @@ the p- paragraphs; the markers are not pasted.</p>
 | p-09 | measures and end state | 117 | ans-158, ans-120, ans-122, ans-137, ans-138 ×2 |
 | p-11 | outcome: the portfolio and the written commentary | 156 | ans-123 ×2, ans-126 ×2, ans-133, ans-170 ×2 |</pre>
 <p>Which sentence of a node each one is (0 = the node's first sentence, split after . ? !): s-01
-N042 0-1, ans-13 6, ans-23 2-4; s-02 q8-open 3-7; s-03 ans-07 0, ans-05 0, 4, 5, 6, 8, ans-114 0;
+N042 0-1, ans-13 6, ans-23 2-4; s-02 q8-open 3-7; s-03 ans-07 0, ans-05 0, 4, 5, 6, ans-03 7, ans-05 8, ans-114 0;
 p-01 ans-175 1, ans-99 0, 4-9, ans-100 8-9; p-02 ans-128 1, ans-24 0, 4, ans-86 0-1,
 ans-24 6-7, ans-45 0-1, ans-13 8-11; p-03 ans-62 17-26, ans-63 8, ans-104 0-1, ans-143 0, ans-136 2-4;
 p-04 ans-119 0-2, ans-173 1-3, ans-180 0-3, ans-107 13-17, ans-124 0-2, ans-137 2-3, ans-139 1;
@@ -86,7 +86,8 @@ ans-174 (the thesis sentence, as typed), ans-173 and ans-180 (the model), ans-15
 workshop, the goal), ans-157 (the first two semesters); from the newer nodes, ans-164 (what governs
 the feedback; facts about pleasure; repeated iteration), ans-170 (the ultimate season and the written
 commentary before the committee), ans-182 (Film B); for the statement, past.N042, ans-13's New
-Orleans sentence, ans-23 (the founder position), q8-open, ans-114. The proposal shares its spine with
+Orleans sentence, ans-23 (the founder position), q8-open, ans-114, and (sixth pass) ans-03's hypothesis
+sentence. The proposal shares its spine with
 the RPI draft (essays/rpi/prose.md) and differs in p-05 (care), p-06's three ans-164 questions, the
 Anthem for Eris sentences of ans-107, p-11's commentary, and the statement.</p>
 <h3>Gaps: what no sentence of yours answers</h3>
@@ -147,6 +148,8 @@ the ship of thesis or evolution ..." (ans-139).</li></ul>
 <p>Two moves of whole sentences and whole paragraphs; no word changed, none cut or added (the proposal stays 1,921 words, p-01 113).</p>
 <ul><li><strong>W-h5-08.</strong> Your proposal sentence (ans-175), "I'm investigating how to use a team of professionals to kickstart a community of musicians that sustains itself.", moved from the end of p-01 to its start, as the RPI proposal (essays/rpi/prose.md) already opens. p-01 now opens on it and ends "What music do individuals in their freedom choose to reproduce, and why?". The judge's reason: "The first sentence of the proposal has no antecedent ('It's the relationship ... that's interesting'). ... The question is good but arrives behind two definitions the reader doesn't have." (h5 L3 reader, item 1). Who Steven Brown is stays your question.</li><li><strong>W-h5-09.</strong> The proposal's paragraphs now run p-01, p-03, p-10, p-02, p-04 to p-09, p-11 (essay.toml's outline and <code>[prompts]</code> reordered; the markers keep their numbers). The hypothesis paragraph, which ends its definition with "That's the closed loop.", now comes before "I have rounded that loop many times already, though it has never outlived me." (p-02), and the band, Siddhartha and Film B paragraph (p-10, ending "These are loops.") sits directly before p-02, as its instances. The judges' reasons: "'That loop' has no referent. ... 'Closed loop' is defined only in paragraph 3, after its use." (h5 L3 reader, item 4) and "'Our group' is the first mention of any group. ... 'These are loops' lands as an assertion." (item 10). Your thesis line still ends p-04, after the definition of the anthem (W-h3-11). The krewe gloss stays your question.</li></ul>
 <p>Yours to reverse.</p>
+<h3>Sixth pass (2026-11-25, h6-synth W-h6-04): the hypothesis before the sentence that names it</h3>
+<p>One whole sentence of yours pulled in to the statement's s-03, none changed: "My hypothesis, the hope, is that one we kick-start the engine, it can hum without me." (present.ans-03, your answer of 2026-10-28 on the magician and steering; the same sentence stands in Buffalo c-17 and Brown c-10), directly before "Leaving here is essential for putting my hypothesis to the test." (ans-05) and after "Similarly, there may be insights I find in other communities that can pay of for my communities here." (ans-05). "one we" is your typing and stays. The proposal does not carry ans-03, so this is a pull-in from Buffalo's sentence, not a reorder from the proposal. The judge's reason (h6 L3 reader, item 16): "QUB | statement | 'I'm looking for a community of theorist... Leaving here is essential for putting my hypothesis to the test.' | the hypothesis is never stated ... | S (reorder so the hypothesis sentence from the proposal comes first) or Q"; the same reader's say-back list: "'my hypothesis' (the statement never states it)". +16 words: s-03 109 → 125, the statement 254 → 270 (the test holds it to 150-300). No sentence is in both texts. Yours to reverse.</p>
 <h3>FOR ZACH:</h3>
 <ul><li>Q: Whom do you write to first at Queen's, and why them? Neither text names Queen's, SARC, Belfast
 or anyone there. On file: John D'Arcy (runs the HIVE Choir, participatory song-making) and Pedro
@@ -160,7 +163,7 @@ and nothing says Vaporwave and Eris are Mardi Gras krewes. Who or what is each, 
 university's guide, not a page anyone opened). The email asks for a "brief outline". Send this much
 in a first email, or a shorter cut?</li><li>E: Your thesis sentence sits at the end of the proposal's anthem paragraph as you typed it
 (lowercase, "notation is produces", no full stop), and the proposal ends on your committee sentence,
-also without a full stop. Keep both as they are?</li><li>E: The 254-word statement leaves out Todd and the woodwind book. Read it: does it say why you want
+also without a full stop. Keep both as they are?</li><li>E: The 270-word statement leaves out Todd and the woodwind book. Read it: does it say why you want
 the PhD, and what would you put back?</li><li>E: Read both texts start to finish. Does the order carry, and what would you put back from the cut
 list?</li></ul>
 <p><a href="/apply/essays/">All essays, drafts for auditing</a></p>
