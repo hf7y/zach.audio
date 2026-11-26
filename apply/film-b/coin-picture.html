@@ -1,0 +1,366 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>portfolio/film-b/coin-picture.md</h1>
+<p id=draft-note>Agent study, not reviewed by Zach. Rendered from portfolio/film-b/coin-picture.md at 82852d0, 2026-11-26. Nothing here is submitted.</p>
+<p>The candidate table: <a href="/apply/film-b/coin-picture-candidates.tsv">coin-picture-candidates.tsv</a> (tab-separated).</p>
+<h2>i. Coin against the picture: a study</h2>
+<p>Study, not a render. Nobody has listened to anything placed here, and the
+picture was read from frames, not watched. Every word in this file is the
+agent's (Claude's), except the lines marked as Zach's and quoted verbatim
+with their source. Times are seconds in Chris's base cut
+(<code>films/b/renders/2026-10-30_viewing/B14_Acts01-02_sans-music_base.mp4</code>,
+REEL 01 + REEL 02, 23.976 fps) unless marked otherwise. Reel timecodes are
+read off the burned-in <code>REEL 1 HH:MM:SS:FF</code> on the frame at that time; where
+none is given, it was not read. In this stretch the burned code runs about
+0.08 s behind the file time.</p>
+<p>The candidate table is <code>coin-picture-candidates.tsv</code> beside this file. The
+contact sheets the logs come from are on the drive in
+<code>05_Renders-Exports/plunge-cue/picture/coin/</code> (43 files: base 0-240 s every
+0.5 s, base frame by frame at 127-131 and 135.5-141.5 s, the March file
+every 1 s and at 12 fps over 17.8-25 s, the coin-plunge clip every 1 s, and
+the reel timecode at each key frame).</p>
+<h3>Zach's words this answers</h3>
+<ul><li>"also look into the coin cue, how to match that to the picture, etc." (chat, 2026-11-25)</li><li>"plunge stitch is wrong, should begin with 1:43 material, bass bow starts. the ableton file should have several takes of that moment. that's what I want layered together. unclear even about what the initial stuff before 1:43 is. The moment 1:43 should coincide with the actors landing in the water after the coin toss" (chat, 2026-11-24; quoted in <code>plunge-stitch.md</code>, Pass 4)</li><li>"the plunge cue is at 2:08" (abc#42 body, 2026-10-30, as quoted in
+<code>films/b/renders/2026-10-30_viewing/scripts/friday_v3f/friday_v3f.py</code>
+line 32 and burned into the v3f labels)</li></ul>
+<p>v4's 0:00 (<code>plunge-stitch-v4-water</code>) is the bass bow entry, so this study
+takes ii. Water to begin on the landing frame. Coin is whatever comes
+before it.</p>
+<h3>What the picture shows</h3>
+<p><strong>Coin toss (base).</strong> In the woman's close shot (124.58-127.97) the coin
+leaves her hand at 127.80-127.92 (REEL 1 00:02:07:17-19). At 127.97
+(00:02:07:21) the cut goes to the coin turning in the air over a blurred
+rooftop and white sky. It falls out of frame at 130.43. At 130.47
+(00:02:10:09) the cut goes to his open palm on the café table. Her hand
+comes down on it at 130.9-131.5, and the two hands stay clasped to 135.85.</p>
+<p><strong>Landing (base).</strong> A dissolve at 135.85-136.39 goes to a backlit white
+shot: two silhouettes holding hands, running and jumping (136.39-139.65,
+00:02:16:07 at 136.39). At 139.69 (00:02:19:14) there is one frame of large
+grey text ("ia SE" over "SKE", cropped; not readable). Then white
+(139.73-140.15). The clasped hands come up from the bottom right at
+140.19-140.40 (00:02:20:07). From 140.52 (00:02:20:10) there is water
+texture and bubbles around them. A dissolve ends at 140.73 (00:02:20:15)
+on full underwater: bubbles, the man under, arms up. **I take 140.52 as
+the landing frame**: it is the first frame where the hands are in water.</p>
+<p><strong>v3f's 2:08.</strong> Base 128.00 reads 00:02:07:21. That is the first frame of
+the coin-in-the-air shot. v3f put the Plunge cue's coin hit and the June
+strings' entrance there (see Precedent).</p>
+<p><strong>The base's own sound.</strong></p>
+<ul><li>Digital silence 0-45.23.</li><li>Set sound 45.23-133.50, with short silent gaps at 62.10-62.94,
+98.09-102.73 and 112.46-116.24.</li><li>Digital silence 133.50-199.37. This is the hand clasp onward: the jump,
+the landing and all the underwater shots.</li><li>Sound 199.37-209.88, silence 209.88-225.23, then sound again
+(ffmpeg <code>silencedetect</code>, -80 dB, 0.5 s).</li></ul>
+<p><code>base-speech.tsv</code> has no speech segment before 236.00 ("old friend"; its
+earlier lines are whisper tags such as [BLANK_AUDIO] and [MUSIC PLAYING]
+over silence). Water's 94 s from 140.52 ends at 234.52, 1.5 s before that
+first line.</p>
+<p><strong>v4.</strong> <code>B14_v4.edl</code> keeps base 42.459-47.339 (TITLE) and then 188.772 on
+(MIST, MN-ON). Everything in 47.339-188.772 is not in v4: the café
+montage, the coin, the toss, the jump, the landing and the first 48 s
+under water. v4 cuts from the book-stall title shot straight to the fog
+road. So in v4 there is no landing for Water's 0:00 to sit on. The
+underwater shots v4 does keep (base 193.82-200.87, v4 9.93-16.98) come
+after the fog road shot, not after a jump.</p>
+<h4>Shot log: base 0-240 s</h4>
+<p>Boundaries are cuts with a scene score over 0.3 (<code>picture/base-frames.txt</code>),
+except those marked "seen", which come from the frames (dissolves and soft
+cuts score under 0.3). Titles are as burned in. Speech means a segment in
+<code>base-speech.tsv</code>.</p>
+<pre>| base in-out | reel TC at in | shot | titles / burned text | sound | speech |
+|---|---|---|---|---|---|
+| 0.0-6.5 | | small inset of a water surface, a large "B" at 3.5-4.0 | "JULY 1 2026" bottom left, 0-4.5 | silence | none |
+| 6.5-10.0 | | black | | silence | none |
+| 10.0-23.0 | | animated letters build "BRICABRACADABRA" | "pictures" 19-20.5 | silence | none |
+| 23.5-32.24 | | black | | silence | none |
+| 32.24-42.46 | | hands at a piano, writing on manuscript paper on the stand | "MARY MAJAK presents" 38-41 | silence | none |
+| 42.46-47.34 | 00:00:42:11 | a hand at a book stall (v4 keeps this shot: TITLE) | "FILM B of the ABC Triptych" 43.5-46 | set sound from 45.23 | none |
+| 47.34-51.80 | 00:00:47:08 | woman reading by shelves | "SOUND Lee Garcia Morgan Orion" 48-50.5 | set | none |
+| 51.80-58.68 | 00:00:51:18 | café interior, younger man and older man in a cap | "MUSIC Z. V. Pine" 52.5-54.5; "COSTUMES BY Stephanie Dixon Sadie Sheldon" 55.5-58 | set | none |
+| 58.68-62.73 | | shop doorway, a girl runs in | "EDITOR Christopher Givens" 60-62 | set | none |
+| 62.73-65.90 | | man close-up, outdoors, blue door | | set | none |
+| 65.90-70.86 | | close-up of an ear and earrings | "ASSOCIATE PRODUCERS Sophia Sells Ruby Green Emily Jane Mouton Dana C. Gainey" | set | none |
+| 70.86-71.70 | | gold watch close-up | | set | none |
+| 71.70-73.62 | 00:01:11:16 | woman at an outdoor café table | small "ADR LB" at frame right | set | none |
+| 73.62-about 76.5 (seen) | | street café, people walking past | "EXECUTIVE PRODUCERS Sarah Ambrose Bruno Doria" | set | none |
+| about 76.5-78.66 | | man close-up, hand at chin | | set | none |
+| 78.66-83.04 | | leaves on the ground | "CO-PRODUCERS Joshua Tierney Brett Felty Fernando MacFarlane" | set | none |
+| 83.04-84.46 | | piano | | set | none |
+| 84.46-88.92 | | hands passing books at the stall | | set | none |
+| 88.92-90.88 | | a hand writing at a table | | set | none |
+| 90.88-92.97 | | man at a table, a woman behind a newspaper | | set | none |
+| 92.97-95.14 | | woman in sunglasses behind a crossword | | set | none |
+| 95.14-98.60 | | piano, a hand on the manuscript | | set | none |
+| 98.60-100.18 | | hands holding a book | | silent gap 98.09-102.73 | none |
+| 100.18-102.56 | 00:01:40:02 | man at the outdoor café table | | | none |
+| 102.56-about 104 | | woman in a straw hat, close; newspaper blur | | set | none |
+| about 104-108.36 | | hands on a coloured map | | set | none |
+| 108.36-112.24 | 00:01:48:07 | woman in the hat looks round; the frame finds the man (no cut over 0.3) | | set | none |
+| 112.24-117.08 | 00:01:52:04 | her hands at the table with paper and a coin; she looks at the coin | | silent gap 112.46-116.24 | none |
+| 117.08-118.99 | 00:01:57:00 | man close-up, blue door | | set | none |
+| 118.99-121.66 | | woman holds up a silver coin, finger raised | | set | none |
+| 121.66-124.58 | 00:02:01:13 | two-shot at the café table; she points | | set | none |
+| 124.58-127.97 | | woman close with the coin; looks down, smiles; **the flick 127.80-127.92** | | set | none |
+| 127.97-130.47 | 00:02:07:21 | **the coin in the air**, blurred rooftop, white sky | | set | none |
+| 130.47-135.85 | 00:02:10:09 | his open palm on the table; her hand comes down (130.9-131.5); hands clasped | | set to 133.50, then digital silence | none |
+| 135.85-136.39 (seen) | 00:02:15:18 | dissolve to white | | silence | none |
+| 136.39-139.65 (seen) | 00:02:16:07 | **the jump**: backlit silhouettes holding hands | | silence | none |
+| 139.69 (one frame) | 00:02:19:14 | large grey text "ia SE / SKE" | the text itself | silence | none |
+| 139.73-140.52 (seen) | | white; the clasped hands come up from the bottom right (140.19) | | silence | none |
+| **140.52**-140.73 | 00:02:20:10 | **the landing**: the hands in water, bubbles; dissolve | | silence | none |
+| 140.73-about 148 | 00:02:20:15 | underwater: the man under, arms up; a green cloth | "PRODUCTION DESIGN Daniel Miller", "ART DIRECTION Sadie Sheldon" 146.5-150 | silence | none |
+| about 148-155 | | the man's face under water, hands | | silence | none |
+| about 155-159.3 | | clasped hands under water | | silence | none |
+| 159.5-166.12 | | red-haired woman under water, tinted | "IMAGES Brett Felty Christopher Givens Ben Maner Michael Parrella Alejandro de los Rios Aaron Sarles" 160-165.5 | silence | none |
+| 166.12-170.17 | | the man under water, hand on his cheek | | silence | none |
+| 170.17-about 172.5 | | green water surface, weed | | silence | none |
+| about 172.5-176.80 | | the woman's face in profile, flaring to white | | silence | none |
+| 176.80-182.22 | | a dark bedroom with a window | "PRODUCERS Christopher Givens Sadie Sheldon" 179-182 | silence | none |
+| 182.22-188.77 | | underwater embrace and kiss, dissolving out | | silence | none |
+| 188.77-193.82 | 00:03:08:14 | fog: a road, a tree, a pole, a man walking (v4 resumes here: MIST, v4 4.88) | | silence | none |
+| 193.82-200.87 | 00:03:13:16 | underwater close shots: orange blur, the man's hand at his throat (196.36), a kiss (198.11), a floral dress (200) | | sound from 199.37 | none |
+| 200.87-209.83 | | the dark room with the window | | sound | none |
+| 209.83-226.35 | | fog: the man walks away along a shore; aerial of a city in fog | "WRITTEN AND DIRECTED BY Christopher Givens" 220.5-224.5 | silence 209.88-225.23 | none |
+| 226.35-240 | | night, the man at a window, shirtless, drinking | "VFX: THREE PAGES FLY AWAY" from 237.5 | sound | from 236.00 ("old friend") |</pre>
+<h4>Shot log: the March cut, 0-385 s</h4>
+<p><code>films/b/ableton/FilmB Here Chance Etude Project/2026-03-04_Plunge.mp4</code>
+(960x540, 60 fps, 385.05 s). It is not at the path FRIDAY-NOTES-v3.md
+gives (<code>01_Raw-Footage/FilmB-B14-Reels/...</code>, which is empty). It is an
+earlier edit of the same opening. Its burned timecode has no reel name and
+jumps at cuts (00:02:23:22 at 21.0, 00:02:29:16 at 21.67), so it is not a
+program timecode. Cuts at 0-135 s are from ffmpeg <code>scene</code> over 0.3
+(<code>march-scene-cuts-0-135.txt</code> on the drive); the rest were seen at 1 s.
+Its audio is the March cue under set sound. At 18.5 there is a broadband
+hit with the flick. From 19.0 the &gt;2 kHz band falls from about -48 to
+-67..-87 dB, which is music without the set sound. At 22.1 there is a</p>
+<blockquote><p>2 kHz transient (-58 dB), which v3f's result.md identifies as the</p></blockquote>
+<p>coin-flip sample.</p>
+<pre>| file in-out | file TC at in | shot | titles |
+|---|---|---|---|
+| 0-2.32 | 00:02:02:23 | her hands with the coin, café | |
+| 2.32-4.72 | | man at the outdoor table | |
+| 4.72-8.62 | | woman in the hat talking, eyes closed | |
+| 8.62-10.92 | | man close-up, blue door | |
+| 10.92-13.05 | | she holds up the coin, finger raised | |
+| 13.05-15.52 | | two-shot; she points | |
+| 15.52-18.69 | | woman close with the coin; **flick at 18.58** (00:02:21:01) | |
+| 18.69-21.65 | 00:02:21:03 | **the coin in the air** (no catch shot, no hand-clasp shot follow) | |
+| 21.65-22.6 | 00:02:29:16 | **the jump**, backlit silhouettes | |
+| 22.67-23.1 | | white | |
+| 23.17-24.08 | 00:02:31:08 (23.33) | **clasped hands break the water** (spray from 23.33) | |
+| 24.08-24.5 | | dissolve | |
+| 24.5-46.09 | 00:02:32:12 | under water: the man (24.5-30), the woman's face (31), the man (33-37), clasped hands (38-39), her hair (40), the man, hand on cheek (41-45) | "MARY MAJAK presents" 34-36; "A FILM BY Christopher Givens" 38-40; "FILM B of the ABC Triptych" 42-45 |
+| 46.09-50.89 | | green water surface | "MUSIC Z.V. Pine" 48-49 |
+| 50.89-58.79 | | underwater embrace | "SOUND Lee Garcia Morgan Orion" 53-55 |
+| 58.79-62.92 | | the woman under water, rays of light | "COSTUMES BY ..." 59-61 |
+| 62.92-69.02 | | a woman on a ferry from behind, purple dusk | "ASSOCIATE PRODUCERS ..." 64-67 |
+| 69.02-73 | | the man's face and neck, close | "EXECUTIVE PRODUCERS ..." |
+| 73-77.49 | | the woman's face, white flare | "CO-PRODUCERS ..." 75-76 |
+| 77.49-81.19 | | the man's face in grain | "EDITOR Christopher Givens" 78-80 |
+| 81.19-88.92 | | the dark bedroom window | "PRODUCTION DESIGN" 82-84; "ART DIRECTION" 86-88 |
+| 88.92-94 | | underwater close, the couple | "IMAGES ..." 90-93 |
+| 94-101.25 | | fog road | "PRODUCED BY Christopher Givens Sadie Sheldon" 96-99 |
+| 101.25-110.69 | | underwater close shots; a kiss 107-109 | |
+| 110.69-115.72 | | the dark room | |
+| 115.72-131.99 | | fog: the man walking; aerial of a city in fog | "WRITTEN AND DIRECTED BY Christopher Givens" 118-122 |
+| 131.99-150 | | night, the man at the window | "VFX: THREE PAGES FLY AWAY" 142-146 |
+| 150-171 | | the man at a desk lamp with photographs; a bed in the dark (159-165); writing (166-170) | |
+| 171-178 | | the room; the man standing; the desk | |
+| 179-184 | | café: the man; her hands on the map; a book stall (182); his open palm (183-184) | |
+| 185-189 | | the man at the desk, candle, from behind | |
+| 190-203 | | aerial: a river with a barge in fog; a ferry terminal and a bridge | |
+| 204-225 | | the ferry: a woman reading; three passengers; a short-haired blond woman from behind; skyline | |
+| 226-251 | | aerial: the ferry leaving the dock, the bridge (232-234 the man's face in grain; 235-237 a man on the ferry) | |
+| 252-258 | | white | "by the time I see you in the morning", "COPYRIGHT © MMXXV BRICABRACADABRA PICTURES ALL RIGHTS RESERVED"; a hand 255-256 |
+| 259-269 | | aerial over a city in fog | |
+| 270-296 | | the man walks down steps; an old bearded man in a red shirt with books; a square, men in coats talking while a woman writes | |
+| 297-334 | | close-ups: the man; a man in a hat; a bald man looking up, talking; fog aerial (316-318); night sky with a bird (321-323) | |
+| 335-385 | | a park bench, three people (man in a hat, bald man, woman), papers handed over, night car interiors (337, 360), a handshake (382-383) | |</pre>
+<p>In this cut the toss-to-landing interval is 4.75 s (18.58 to 23.33). In
+the base it is 12.72 s (127.80 to 140.52). The base adds the catch, the
+hand-clasp shot and a longer jump.</p>
+<h4>The coin-plunge clip</h4>
+<p><code>portfolio/film-b/01_own-sound_coin-plunge.mp4</code> (106.02 s) is base
+<strong>126.006-232.0</strong>. That was found by matching 64x36 grey frames over 0-30 s
+of the clip against base 120-160 s: mean absolute difference 0.44 at that
+lag, against 6.8 at the next best. <code>portfolio/film-b-excerpts.tsv</code> says
+126.0-232.0 of the v3f labeled viewing render, and the burned reel code on
+its first frame reads 00:02:06:06. Its burned labels:</p>
+<ul><li>0-2 s: "B14-001 | bed only: Chris's piano/café collage".</li><li>From 2 s (base 128): "B14-001 | agent placement from Zach's notes
+(unreviewed) | 2026-03-04 Plunge.wav" and "... | 260615 session take
+[2026-06-15 16...", each over the line <code>Zach: "the plunge cue is at 2:08"</code>.</li><li>By 70 s only the Plunge.wav label is left.</li></ul>
+<h3>Precedent: v3f</h3>
+<p>From <code>friday_v3f/result.md</code> and <code>friday_v3f.py</code>, agent work from
+2026-10-30:</p>
+<ul><li>Take 162833 114.0-172.0 (the "Plunge to 14" pass) is placed at base
+128.0-186.0. result.md says: "That puts the string entrance on the coin
+hit."</li><li><code>2026-03-04_Plunge.wav</code> is placed from its coin-flip hit (22.135 s) at
+128.0.</li></ul>
+<p>So v3f read "2:08" as Coin's bar 1. Then Coin's bars 1-14 run 46 s past
+the landing, under the underwater shots. That cannot hold together with
+Water's bass on the landing.</p>
+<h3>The cue: i. Coin from 1m1.ily</h3>
+<p>Source: <code>/mnt/d/gardien-media/mandark/Documents/abc/1m1.ily</code>. Macros are
+from <code>lib/core/notation.ily</code>:</p>
+<ul><li><code>\daln</code> is a circled-tip crescendo (dal niente) and <code>\aln</code> a circled-tip
+decrescendo (al niente).</li><li><code>\ss</code> hides the staff lines.</li><li><code>sp</code> = "pont.", <code>st</code> = "tasto", <code>ord</code> = "ord.".</li></ul>
+<p><code>\square</code> and <code>\half-harmonic</code> come from <code>strings.ily</code>, whose comment calls
+that family "pressure/overpressure territory". The file has three final
+barlines (<code>\bar "|."</code>), after bars 14, 19 and 24, so it is three blocks.
+4/4 at quarter = 60, so bar n starts at (n-1) x 4 s.</p>
+<pre>| bar | written | vn | vc 1 | vc 2 | cb |
+|---|---|---|---|---|---|
+| 1 | 0:00 | tacet | tacet | tacet | G, pp, tied |
+| 2 | 0:04 | tacet | D + D harmonic, tasto, dal niente (whole bar) | D + D harmonic, tasto, dal niente (whole bar) | G, gliss |
+| 3 | 0:08 | tacet | D/D-harm., first half; reaches pp | second half, D/D-harm. | half-harmonic G, gliss |
+| 4 | 0:12 | **enters**: D + F# harmonic, dal niente | G + D harm., first half | G + D harm., second half | square G, al niente |
+| 5 | 0:16 | pp, ord. to pont. arrow | G/D-harm.; tasto to pont. arrow (bars 5-9) | D/D-harm.; tasto to pont. arrow | rest |
+| 6 | 0:20 | gliss, cresc. | G/D-harm. to p | D/D-harm. | rest |
+| 7 | 0:24 | half-harmonic F#, p, gliss | G/D-harm. to p | D/D-harm. (from p) | **G + G harmonic, pont., dal niente** |
+| 8 | 0:28 | square F#, cresc. | G/D-harm. to **f** | D/D-harm. (from p) | p, gliss |
+| 9 | 0:32 | square F#, **f "overpress."**, al niente hairpin | G/D-harm. to **f** | D/D-harm. (from **f**) | half-harmonic G, gliss |
+| 10 | 0:36 | square F# | half-harmonic D to p | half-harmonic D (from **f**) | square G, al niente |
+| 11 | 0:40 | rest | half-harm. D to p | half-harm. D (from p) | square G |
+| 12 | 0:44 | spacer | half-harm. D to pp | D/D-harm. (from p) | rest |
+| 13 | 0:48 | spacer | half-harm. D to pp | D/D-harm. (from pp) | rest |
+| 14 | 0:52 | spacer | rest | rest, pp | rest |
+| 15 | 0:56 | **B-flat**, fp&gt;, ord. to pont. | D + F# harm., fp&gt;, pont. | A + A harm., fp&gt;, pont. | G + C harm., fp&gt;, pont. to tasto |
+| 16 | 1:00 | gliss, pp | gliss, pp | gliss | gliss, pp |
+| 17 | 1:04 | square B-flat, al niente | half-harm. F#, al niente | half-harm. A, pp, (pont.) to tasto | half-harm. C, al niente |
+| 18 | 1:08 | rest | rest | half-harm. A, al niente | rest |
+| 19 | 1:12 | rest | rest | rest | rest |
+| 20-24 | 1:16-1:36 | as 15-19, **B natural** | as 15-19 | as 15-19 | as 15-19 |</pre>
+<p>The cellos alternate half bars from bar 3 on: vc 1 plays the first half,
+vc 2 the second. Each half-bar note swells from nothing to the dynamic
+written at the rest after it. Coin ends at 1:36.</p>
+<p>**Five corrections to <code>plunge-stitch.md</code> "What the score gave"** (my
+reading; that file was not edited):</p>
+<ol><li>The violin is tacet in bars 1-3 and enters at bar 4 (0:12), dal niente.
+Its square noteheads begin at bar 8 with a crescendo, before the
+"overpress." f at bar 9.</li><li>The bass plays two gestures, not one glissando:</li><li style="margin-left:1.5em">bars 1-4 (0:00-0:16): the G drone, gliss, half-harmonic, square note
+al niente;</li><li style="margin-left:1.5em">bars 5-6: rest;</li><li style="margin-left:1.5em">bars 7-11 (0:24-0:44): G with a G harmonic (pont.), dal niente, p,
+gliss, half-harmonic, square notes al niente;</li><li style="margin-left:1.5em">bars 12-14: rest.</li><li>Cello 1 enters at bar 2 (0:04), with cello 2. "Alternate" is half-bar by
+half-bar between the two cellos. Cello 1 moves to G/D harmonic for bars
+4-9; cello 2 stays on D/D harmonic except bar 4. Both go tasto to pont.
+over bars 5-9 and to half-harmonic D from bar 10.</li><li>The loud point is the ensemble's, not only the violin's. The cellos'
+swells reach f in bars 8-10 (cello 1 at the half bars of 8 and 9,
+cello 2 arriving at the downbeats of 9 and 10). That is under the
+violin's f overpressure in bars 9-10, so f spans 0:28-0:40. After it the
+cellos go p then pp through bar 13. Only bar 14 is silent in every
+part; "4 bars of rest" is the violin's alone.</li><li>In each stinger, cello 2 sounds one bar longer than the others: a pp
+half-harmonic A with a (pont.) to tasto arrow over bars 17-18 (22-23),
+al niente at the end of bar 18 (23). The bass also goes pont. to tasto,
+cello 1 is pont., and the violin goes ord. to pont.</li></ol>
+<h4>Where the June session put these (take 162833 unless named)</h4>
+<p>Locators are from <code>locators.tsv</code>; talk from <code>transcripts/162833.txt</code>.
+Levels are new here, measured on <code>mixes/162833.wav</code> (RMS, and the &gt;2 kHz
+band).</p>
+<ul><li><strong>Bars 1-14.</strong> "Plunge to 14" locators at 155853 298.4, 162833 109.8,
+221.0 ("Plunge to 14 pp") and 320.4 ("bass on high g").</li><li style="margin-left:1.0em">Take 162833: count-off at 87-113 s ("Can we just do a little count
+off? ... one, two, three, four"), music 113.5-168.0 (54.5 s against
+56 s written).</li><li style="margin-left:1.0em">2 s RMS rises from -59 dB at 114 to about -45 by 138.</li><li style="margin-left:1.0em">The &gt;2 kHz band peaks at 150-152 s (-54, -56 dB). With bar 1 at 113.5
+that is 0:36.5-0:38.5, inside the written overpressure.</li><li style="margin-left:1.0em">The loudest 2 s block is 158-160 s (-38.9 dB): 0:44.5-0:46.5, bar 12.
+That is one to two bars after the written f.</li><li style="margin-left:1.0em">The music falls to -59 dB by 168.</li><li><strong>Bar 15 on.</strong></li><li style="margin-left:1.0em">The "15" locator is at 484.2.</li><li style="margin-left:1.0em">Run 641-703: count "One, two, three" at 641-646. Attacks at 644, 648
+and 656; the 656 attack decays to the floor by about 678 (21 s). Per
+<code>candidates.tsv</code>, the violin's strongest partial after the attacks is
+Ab (204 Hz), F#5 (735 Hz), Bb5 (926 Hz).</li><li style="margin-left:1.0em">Run 534-575: attacks at 536, 545, 551 and 556, with "Okay" and "Go on"
+between them; C#, F#, Bb, Bb.</li><li style="margin-left:1.0em">No measured attack plays the B natural that bar 20 asks for. The two
+stingers are 20 s apart on the page; in the session they are about
+8 s apart.</li><li><strong>Later bar-15 runs.</strong></li><li style="margin-left:1.0em">"x measure 15 no Dave" (2563.8): talk at 2608.8-2618.8 ("So you're
+saying you don't want dynamic, you just want pressure. Got it.").
+Music 2626-2652, attacks at about 2627, 2641, 2644 and 2647.</li><li style="margin-left:1.0em">"same, all to air" (2653.7): count-in "One, two, one, two" at
+2669.8-2672.8, then <strong>one attack at 2673.4</strong>, loudest at 2674-2677
+(-30.5 dB), decaying to the floor by about 2691 (17 s). It has no words
+over it.</li><li style="margin-left:1.0em">"same loud to soft" (2702.2): nothing above the floor from 2702 to
+2745, and the "CHORDS" locator is at 2736.6.</li><li style="margin-left:1.0em">Which locator names the 2673.4 run cannot be told from the set. Its
+pitch was not measured.</li><li><strong>Overpressure, improvised.</strong> "Plunge, crunch" (1367.6); v2 used
+1438-1462, attack at 1440.</li><li><strong>Tuning.</strong> Coin's D in the June takes is 146.5-147.9 Hz; Water's is
+145-145.8 Hz (<code>plunge-stitch.md</code>). Overlapped, they are 8-34 cents apart
+and will beat.</li></ul>
+<h3>Candidates</h3>
+<p>All rows, with written time, base time, reel timecode, why, what each needs
+and what v4 does to it, are in <code>coin-picture-candidates.tsv</code>. The landing
+is 140.52 throughout.</p>
+<ul><li><strong>A. End to end.</strong> Coin's 1:36 = the landing, so bar 1 = 44.52, inside
+v4's TITLE shot.</li><li style="margin-left:1.0em">Stinger 1 at 100.52, 0.34 s after a cut.</li><li style="margin-left:1.0em">Stinger 2 at 120.52, on the woman holding the coin.</li><li style="margin-left:1.0em">The toss (127.80) has no event: it falls 3.3 s into stinger 2's
+glissando.</li><li style="margin-left:1.0em">Bar 24's rest covers the jump, so the jump is silent in both the score
+and the base.</li><li style="margin-left:1.0em">Needs no edit to the bars 1-14 take. Needs two separate stinger clips.</li><li><strong>B. Stinger 2 on the toss.</strong> Bar 20 = 127.80, so bar 1 = 51.80, which
+is a hard cut (the café shot that carries "MUSIC Z. V. Pine").</li><li style="margin-left:1.0em">Stinger 1 falls 0.56 s before the 108.36 cut. Its glissando falls
+0.44 s before the 112.24 cut, the first close shot of the coin.</li><li style="margin-left:1.0em">The glissando runs from catch to clasp.</li><li style="margin-left:1.0em">Bar 22's al niente (135.80-139.80) matches the jump shot (dissolve
+135.85, last jump frame 139.65).</li><li style="margin-left:1.0em">Cello 2's last bar (139.80-143.80) covers the white and the landing,
+so Water's bass enters 0.72 s into it.</li><li style="margin-left:1.0em">Needs: 162833 113.5-168.0 at 51.80 and 656.0 at 127.80. Stinger 1
+from 2673.4 or 648.2. A fade or cut at 140.52. The 656 attack is Bb,
+not the B natural written for bar 20.</li><li><strong>C. Overpressure on the jump.</strong> Bar 9 = 136.39, so bar 10's downbeat is
+140.39, 0.13 s before the landing. The bass harmonic swells under the
+coin in the air, and the cellos' f starts on the hand clasp.</li><li style="margin-left:1.0em">Coin's bars 10-14 run under Water (two Ds 8-34 cents apart).</li><li style="margin-left:1.0em">The stingers would land 19.9 and 39.9 s into Water.</li><li style="margin-left:1.0em">The take's own peak is 4.5 s late for this. It would need a slide that
+gives up the bar grid, or the improvised crunch laid on the jump.</li><li><strong>D. Stinger 1 on the toss, stinger 2 cut.</strong> Bar 15 = 127.80, so bar 1 =
+71.80, 0.1 s after a hard cut.</li><li style="margin-left:1.0em">The f and overpressure (99.80-111.80) end as the coin is first seen
+close.</li><li style="margin-left:1.0em">The cellos thin out while she studies the coin. Bar 14 is a silent bar
+(123.80-127.80) right before the flick.</li><li style="margin-left:1.0em">The ending has the same shape as B.</li><li style="margin-left:1.0em">The session's 656.0 attack plays Bb5, which is what the page asks for
+in bar 15.</li><li style="margin-left:1.0em">Coin is 76 s. Needs: 162833 113.5-168.0 at 71.80 and 656.0 at 127.80,
+no stretch.</li><li><strong>E. The March cut.</strong> If the picture went back to the 2026-03-04 shape,
+toss to landing is 4.75 s. A stinger on the flick (18.58) would be cut
+by Water 0.75 s into its glissando. Bars 1-14 would have to start
+37.4 s before that file's first frame.</li><li><strong>F. The cue at 2:08: a stinger only.</strong> Zach's two notes ("the plunge
+cue is at 2:08"; 1:43 on the landing) leave about 12.5 s between the
+cue's start and the landing. One stinger fits that (bar 15 on the
+127.97 cut, al niente over the jump, cello 2 into the landing); bars
+1-14 do not. This is D's ending without D's first 56 s.</li></ul>
+<p><strong>Strongest, in my reading: the stinger-on-the-toss ending of D</strong>, with D's
+bars 1-14 before it, or without them (F). The reasons:</p>
+<ul><li>It is the only placement where three picture events fall on written
+events without any stretch: the flick on the fp attack, the jump on the
+al niente bar, and the landing in cello 2's last bar, where Water
+enters.</li><li>Bar 1 then falls on a hard cut without being aimed at it.</li><li>The stinger it uses (Bb) is the pitch the 656.0 attack plays.</li><li>It keeps the base's digital silence from 133.50 for Coin's decay alone.</li></ul>
+<p>B gives the same ending with both stingers, at the cost of the wrong pitch
+on the toss (Bb for B natural) and a stinger 1 clip whose pitch is not
+measured. Whether bars 1-14 belong before the toss at all is Zach's call:
+his "2:08" note, as v3f read it, starts the cue on the coin.</p>
+<p><strong>What breaks it.</strong></p>
+<ul><li>v4. The v4 EDL drops base 47.339-188.772, so every candidate except
+A's first 2.8 s is gone from v4. The toss, catch, jump and landing are
+all in that span. v4 shows no coin and no landing, so it has nowhere to
+put "1:43 ... landing in the water after the coin toss". Any of A-D and
+F needs base 127.80-140.73 back in the picture (12.9 s). D also needs
+71.70-127.80, and B needs 51.80-127.80. Otherwise the cue has to be
+placed against the v3f picture (base timeline) or Chris's next cut.</li><li>The stingers on the page are 20 s apart; in the session they are about
+8 s apart, so B and A need clips from different runs. The B natural is
+not in any measured attack.</li><li>Nobody has listened to any of these. The 2673.4 run's pitch and its
+locator are unknown.</li></ul>
+<h3>What I could not see or decide</h3>
+<ul><li>The one-frame text at 139.69 ("ia SE / SKE"): cropped, not readable.
+Whether it is meant to be there is not known.</li><li>Whether 140.52 or 140.73 is the frame Zach means by "landing". At 140.52
+the hands are already in water; 140.73 is the first frame fully under.
+The candidates use 140.52; the difference is 0.21 s.</li><li>Whether the coin lands in his palm: the coin is not visible in the
+130.47-131.5 frames.</li><li>What "the plunge cue is at 2:08" was meant to start: Coin's bar 1 (v3f's
+reading), a stinger, or Water. I did not decide this.</li><li>Which of the later bar-15 runs is which ("x measure 15 no Dave", "same,
+all to air", "same loud to soft"), and what pitches the 2626-2652 and
+2673.4 runs play.</li><li>Whether Chris will restore the plunge footage to v4. The v4 EDL and
+FRIDAY-NOTES-v3.md do not say why it was dropped.</li><li>The March cut's music under the toss was not identified beyond the
+levels above.</li></ul>
+<h3>Zach, 2026-11-25 (chat), verbatim</h3>
+<p>Asked which placement, the stinger on the toss or bars 1-14 before it: "on the coin toss."</p>
+<p><a href="/apply/">Apply</a></p>
+</body>
+</html>
