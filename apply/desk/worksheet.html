@@ -1,0 +1,77 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+	<style>table { border-collapse: collapse; font-size: .85em; display: block; overflow-x: auto } td, th { border: 1px solid #ccc; padding: .2em .5em; vertical-align: top } pre { white-space: pre-wrap; overflow-wrap: anywhere } img { max-width: 100% } button { font: inherit; margin-bottom: .5em }</style>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>For Zach: a worksheet for the Duration paper (AGENT-WRITTEN)</h1>
+<p id=draft-note>Agent-written working material, not Zach's prose. Rendered from writing/duration/for-zach.md at adf1c25, 2026-11-27. Nothing here is submitted.</p>
+<p>Agent-written, 2026-11-27. Nothing on this page is a sentence for your paper, and nothing is a draft of
+one. Every theorem gloss in part (a) is the agent's, labelled so; part (b) is copied word for word from
+<code>writing/duration/proof-notes.md</code> section 8; the quotation in part (c) is yours, copied from
+<code>writing/duration/facts.md</code>. The full proofs are the appendix of <code>writing/duration/paper.pdf</code> (A.1 to A.11).</p>
+<h3>(a) What each theorem says, in plain English (agent's gloss)</h3>
+<ul><li><strong>Theorem 1.</strong> A single notehead (a note value with its flags and dots) can last exactly the
+numbers that are one unbroken string of 1s in binary, and each such number has only one notehead.</li><li><strong>Corollary 1a.</strong> Ties can reach every duration whose proportion to the reference note is a
+fraction with a power of two underneath (3/4, 21/16), and nothing else (never 1/3).</li><li><strong>Theorem B.</strong> The obvious tie (one notehead per string of 1s) is never more than about twice as
+long as the shortest tie, and there are durations where it is that bad.</li><li><strong>Theorem P.</strong> The shortest tie for any duration can be found exactly, by counting how many
+noteheads cover each binary position and paying only when that count goes up.</li><li><strong>Corollary S.</strong> A shortest tie never needs a value or a dot shorter than the shortest part of the
+obvious tie, or a notehead longer than its longest.</li><li><strong>Theorem 2.</strong> Exactly the durations of the form "1, a gap, a string of 1s, a single 0, a string of
+1s" (and the ones with at most two strings) can be written with two noteheads; 41/32 and 53/32 need three.</li><li><strong>Theorem C.</strong> If every string of 1s and every gap in a duration's binary form is at least two long,
+the obvious tie is already the shortest.</li><li><strong>Lemma W.</strong> The fewest signed powers of two that add up to a whole number follows a known rule
+(Reitwiesner's non-adjacent form); it is the tool behind theorem C.</li><li><strong>Theorem G.</strong> Making the gaps longer never guarantees that the obvious tie is shortest: for every
+gap length there is a duration where a shorter tie exists.</li><li><strong>Theorem H.</strong> Long gaps do limit the saving: if every gap is at least g long, the shortest tie is
+shorter than the obvious one by at most (shortest minus one) divided by g noteheads.</li><li><strong>Proposition R.</strong> Flags and dots commute on one notehead, but a tie's record is not unique: 5/4 is
+whole tied to quarter, and also dotted half tied to half.</li></ul>
+<h3>(b) The eight questions (copied verbatim from proof-notes.md section 8)</h3>
+<ol><li>21/16 of a whole note can be written whole tied to quarter tied to sixteenth, or triple-dotted
+half tied to dotted quarter. Which would you rather read, and which would you rather write?</li><li>When you wrote "Ties Are Evil", what made a tie evil: the number of noteheads, the tie arcs,
+the dots that replace them, or that the tied notes stop being one thing?</li><li>Does a tie forced by a barline count for your argument, or only a tie forced by the duration
+itself?</li><li>Your draft calls a flag "diminution" and a dot "augmentation". These notes take each dot to add
+half of what the dot before it added. Is that your definition, or did you mean something else
+by augmentation?</li><li>Who should find the result new: a music theorist on the committee, or a mathematician? The
+bound "never more than about twice the noteheads needed" is easy for a mathematician and
+probably new to a music theorist.</li><li>The 2023 abstract stops at "The music engraving software LilyPond defines duration to be".
+How did that sentence end?</li><li>In Feldman's <em>Last Pieces</em>, what do the notes look like: black noteheads without stems, or
+something else?</li><li>Would you rather the paper stop at the counterexample (21/16 needs two noteheads, not three),
+or carry the full proof of the twice-as-many bound?</li></ol>
+<h3>(c) The slots the paper needs from you</h3>
+<ol><li><strong>Title.</strong> The paper opens on the slot "[Title: Zach, pending]". The draft's title heading is empty (writing/STATUS.md); the Drive file is named "Duration".</li><li><strong>Diminution Flags.</strong> Your draft has the heading and one unfinished sentence ("Diminution is a
+procedure"); the paper prints the heading and a pending slot, "what a flag does to a duration".</li><li><strong>Augmentation Dots.</strong> Your draft has the heading and nothing under it; the paper prints the heading
+and a pending slot, "what a dot does to a duration".</li><li><strong>Ties.</strong> The paper prints the heading "Ties", a pending slot for the result and its proof in your own
+words, and a pointer to the appendix. Your 2023 abstract "Ties Are Evil" opens (as <code>facts.md</code> quotes it):</li></ol>
+<p>   &gt; The durations which can be notated with a single notehead are limited to a strict subset of rational numbers.
+   &gt; All other durations must be written with at least two noteheads tied together.</p>
+<h3>(d) The practical case, in one paragraph (agent's)</h3>
+<p>This is a pointer, not a paragraph for your paper. Your question, "what's the practical case?", is
+answered in <code>writing/duration/practical.md</code>: a tool (<code>bin/tie-min 21/16</code> prints the binary tie and a
+shortest tie as LilyPond, with notehead counts) and a count on your own sources and timing tables. The
+short, honest version: in your own LilyPond files that are not machine-built (77 tie chains in 12 files)
+the shortest tie never beats the binary tie; in the machine-built scores from the recording-to-score
+pipeline (378 chains in 5 files) it does in 4 chains (21/16, 21/32 twice, 43/32), and in quantised
+timings from your own recordings the binary tie is beaten for about 4% to 19% of the durations that need
+a tie at a 1/32 grid. The counts are upper bounds where a barline cannot be told from the duration, and
+the dots-bounded case (<code>--max-dots 2</code>) is a search, not a theorem.</p>
+<p><a href="/apply/desk/">Desk</a></p>
+<p id=up-links><a href="/apply/">Apply</a> · <a href="/apply/files.html">All files</a></p>
+</body>
+</html>

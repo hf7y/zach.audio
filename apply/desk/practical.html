@@ -1,0 +1,182 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+	<style>table { border-collapse: collapse; font-size: .85em; display: block; overflow-x: auto } td, th { border: 1px solid #ccc; padding: .2em .5em; vertical-align: top } pre { white-space: pre-wrap; overflow-wrap: anywhere } img { max-width: 100% } button { font: inherit; margin-bottom: .5em }</style>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>The practical case for the shortest tie (AGENT-WRITTEN, not Zach's words)</h1>
+<p id=draft-note>Agent-written working material, not Zach's prose. Rendered from writing/duration/practical.md at adf1c25, 2026-11-27. Nothing here is submitted.</p>
+<p>Agent-written, 2026-11-27. Nothing here is a sentence for his paper or a draft of one. It answers one
+chat line of his, 2026-11-27: "how to harden the math? the results don't seem that interesting. very
+abstract. what's the practical case?". The tool is <code>bin/tie-min</code>; the counting is <code>bin/tie-scan</code>; the
+tests are <code>tests/test_tie_min.py</code> and <code>tests/test_tie_scan.py</code>. The maths is
+<code>writing/duration/proof-notes.md</code> (T(d), Theorem P); the notation-program facts are
+<code>writing/duration/novelty.md</code>.</p>
+<h3>1. The case, in plain terms (agent's reading)</h3>
+<p><strong>What a transcription pipeline does with durations.</strong> A machine that turns a recording or a MIDI
+file into notation ends with a list of lengths: this note lasted 1.31 s, the next onset came 0.63 s
+later. It rounds each length to a grid, then has to write every rounded length as noteheads. A
+length that is not one notehead (theorem 1: a single run of 1s in binary, such as 3/4 or 7/16) has to
+be tied. So the step "write this length" is exactly the question T(d) answers: how many noteheads?
+His statement names the pipeline: "the recording to score pipeline", "generate score for players,
+render score from players", "pitch to MIDI tools like Ableton's"
+(<code>essays/brown/portal/statement.txt</code>, <code>essays/harvard/portal/statement.txt</code>, and the other programs'
+copies).</p>
+<p><strong>What the notation programs do.</strong> From <code>novelty.md</code> (source read 2026-11-27): Abjad cuts the
+binary expansion at its 0s, one notehead per block, so it writes 21/16 as 16 + 4 + 1 sixteenths
+(<code>c1~ c4~ c16</code>, three noteheads); music21 "will break off the largest type that fits within this
+type and recurse". Neither minimises noteheads. I did not read LilyPond's own splitting code,
+MuseScore's, or Dorico's, so "notation programs tie by binary blocks or greedily" is shown here for Abjad and music21
+only.</p>
+<p><strong>What the shortest tie saves.</strong> <code>bin/tie-min 21/16</code> prints the binary tie (3 noteheads) and a
+shortest tie (2): <code>c1~ c4~ c16</code> against <code>c2...~ c4.</code>. The saving is never more than about half
+(theorem B: the binary tie has at most 2T - 1 noteheads). Whether a reader prefers three plain
+noteheads to two with dots, three of them on one head, is a different question (section 5); the tool
+counts, it does not judge.</p>
+<p>Run it:</p>
+<p>    bin/tie-min 21/16                  # binary tie 3, shortest 2
+    bin/tie-min --unit 1/32 21         # the same duration as 21 thirty-seconds
+    bin/tie-min --max-dots 2 341/256   # unbounded 3 noteheads, at most 2 dots 4
+    bin/tie-min --all 5/4              # both shortest ties: c1~ c4 and c2.~ c2</p>
+<p>The <code>--max-dots N</code> search is the bounded one, outside the theorems (they allow any number of dots):
+it is a breadth-first search over sums of runs of at most N+1 bits, not the profile programme. The
+unbounded answers come from <code>bin/duration-ties</code>' Theorem P code by import.</p>
+<h3>2. What the counts say (the honest result first)</h3>
+<p>On Zach's own LilyPond, hand-written or not marked as generated, <strong>the result never bites</strong>: 77 tie
+chains in 12 files, and in none does a shortest tie beat the binary tie (b &gt; T: 0), and in none do
+two dots cost a notehead (T2 &gt; T: 0). Every one of the 67 chains that a shorter tie could replace is
+a chain whose total is a single notehead (for example <code>4~4</code> = 1/2, <code>1~1</code> = 2, <code>4~2.</code> = 1), a
+barline or beat tie that the regex cannot tell from a duration-forced one.</p>
+<p>It bites in <strong>machine-built scores</strong>: the pipeline output (the film-b water scores from
+<code>bin/plunge</code>, and the three Siddhartha 2023 scores whose headers say "WRITTEN BY build_show.py /
+build.py" and "Agent-derived draft ... from machine passes over the church board recording"): 378
+chains in 5 files, 4 where the shortest tie beats the binary tie, 16 where two dots cost a notehead.
+So the practical case, on this data, is the recording-to-score pipeline and nothing hand-written yet,
+and it is a small case: the 4 chains are 21/16, 21/32 (twice) and 43/32. The much larger effect in
+the same files is not the shortest tie at all but the plain merge: 179 of the 378 machine-built chains
+sum to one notehead, which a pipeline that sums before it splits would write as one note (243 of the
+378 have a shorter tie than the one written).</p>
+<h4>2a. Zach's LilyPond sources (<code>bin/tie-scan ly</code>)</h4>
+<p>    bin/tie-scan ly /mnt/d/gardien-media/mandark/Documents portfolio compositions Anthem.ly --top 10</p>
+<p>(run from the repo root; read-only; the cap of 400 files was not reached.)</p>
+<table><thead><tr><th></th><th>count</th></tr></thead><tbody><tr><td>distinct .ly/.ily files found and scanned (by content hash)</td><td>67 (23 in <code>Documents/</code>, 44 in the repo)</td></tr><tr><td>files with at least one tie chain</td><td>17</td></tr><tr><td>tie chains found</td><td>455</td></tr><tr><td>chains whose sum fits fewer noteheads than written (T &lt; w), unbounded</td><td>310</td></tr><tr><td>the same, noteheads limited to 2 dots (T2 &lt; w)</td><td>301</td></tr><tr><td>chains the binary tie loses on (b &gt; T)</td><td>4</td></tr><tr><td>chains where limiting to 2 dots costs a notehead (T2 &gt; T)</td><td>16</td></tr><tr><td>chains inside a tuplet or with a <code>*n/m</code> multiplier (not analysed)</td><td>0</td></tr><tr><td>chains cut by a computed bar line (metre tracker; see limits)</td><td>141</td></tr><tr><td>segments (chains cut at those bar lines) of 2 or more noteheads / shortenable unbounded / with 2 dots</td><td>348 / 208 / 199</td></tr></tbody></table>
+<p><strong>Read the 310 and 301 as upper bounds.</strong> A tie forced by a barline cannot be told from a tie forced
+by the duration by a regular expression. The scanner has a second pass: it tracks <code>\time</code>, tuplets,
+grace notes and <code>&lt;&lt; &gt;&gt;</code> voices to cut each chain at computed bar lines, and checks itself against the
+<code>|</code> bar checks in the file (a file's metre is "verified" when at least 90% of at least 5 bar checks
+land on a computed bar line). Only 4 of the 17 files pass: the two film-b scores and <code>abc/1m1.ily</code>,
+<code>abc/2m1.ily</code>. In those, the segments between bar lines are 73 and 47 are shortenable, all 47 in the
+film-b scores (machine-built); in the two passing files not marked generated, every tie chain
+crosses a bar line, so none is duration-forced. The other 13 files have no bar checks or a metre the tracker lost
+(repeats, alternatives), so their segment counts are less sure than the whole-chain counts.</p>
+<p><strong>The 10 commonest patterns a shorter tie replaces</strong> (pattern as written, sum in whole notes, w =
+noteheads written, b = binary tie, T = shortest, T2 = shortest within 2 dots; count over all 67
+files, first location):</p>
+<table><thead><tr><th>count</th><th>written</th><th>sum</th><th>w</th><th>b</th><th>T</th><th>T2</th><th>first at</th></tr></thead><tbody><tr><td>33</td><td><code>8~8</code></td><td>1/4</td><td>2</td><td>1</td><td>1</td><td>1</td><td>portfolio/film-b/plunge-stitch-v4-water-fragments.ly:53</td></tr><tr><td>17</td><td><code>4~4</code></td><td>1/2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>/mnt/d/gardien-media/mandark/Documents/abc/1m2.ily:56</td></tr><tr><td>15</td><td><code>8.~32</code></td><td>7/32</td><td>2</td><td>1</td><td>1</td><td>1</td><td>compositions/siddhartha-2023/act1-2023/act1-2023.ly:866</td></tr><tr><td>10</td><td><code>4.~2</code></td><td>7/8</td><td>2</td><td>1</td><td>1</td><td>1</td><td>portfolio/film-b/plunge-stitch-v4-water-fragments.ly:82</td></tr><tr><td>8</td><td><code>4.~8</code></td><td>1/2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>portfolio/film-b/plunge-stitch-v4-water-fragments.ly:300</td></tr><tr><td>8</td><td><code>4.~16.</code></td><td>15/32</td><td>2</td><td>1</td><td>1</td><td>2</td><td>compositions/siddhartha-2023/act1-2023/act1-2023.ly:1262</td></tr><tr><td>8</td><td><code>4.~16</code></td><td>7/16</td><td>2</td><td>1</td><td>1</td><td>1</td><td>compositions/siddhartha-2023/act1-2023/act1-2023.ly:862</td></tr><tr><td>6</td><td><code>1~1</code></td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>/mnt/d/gardien-media/mandark/Documents/abc/lib/core/test-suite.ly:91</td></tr><tr><td>4</td><td><code>8~4</code></td><td>3/8</td><td>2</td><td>1</td><td>1</td><td>1</td><td>compositions/siddhartha-2023/act1-2023/act1-2023.ly:869</td></tr><tr><td>4</td><td><code>4.~8~8</code></td><td>5/8</td><td>3</td><td>2</td><td>2</td><td>2</td><td>portfolio/film-b/plunge-stitch-v4-water-fragments.ly:408</td></tr></tbody></table>
+<p>Nine of the ten are chains that a single notehead replaces (b = 1), which is the plain merge, not the
+shortest-tie result. Only the last has b = 2 = T (the binary tie is already shortest; <code>4.~8~8</code> is
+three noteheads where <code>2~8</code> is two).</p>
+<p><strong>The chains the result is about</strong> (b &gt; T, or T2 &gt; T), in <code>bin/tie-scan ly</code>'s "chains where" list;
+all in machine-built files, a few of them:</p>
+<ul><li><code>compositions/siddhartha-2023/act1-2023/act1-2023.ly:1235</code>: <code>2~32~8</code> = 21/32, three noteheads, b = 3,
+T = 2: <code>c4...~ c8.</code> (or <code>c4..~ c8..</code> within 2 dots).</li><li><code>compositions/siddhartha-2023/after-ta-2023/after-ta-2023.ly:2094</code>: the same <code>2~32~8</code>.</li><li><code>compositions/siddhartha-2023/after-ta-2023/after-ta-2023.ly:203</code>: <code>2~8~2~8.</code> = 21/16, which is
+Abjad's case, with one bar line inside it (so each half, <code>2~8</code> and <code>2~8.</code>, is already shortest).</li><li><code>compositions/siddhartha-2023/after-ta-2023/after-ta-2023.ly:205</code>: <code>8.~32~1~8</code> = 43/32, four noteheads
+written, b = 3, T = 2 (<code>c2....~ c4.</code>, four dots) and T2 = 3 (<code>c1~ c4~ c16.</code>).</li><li>16 chains where two dots cost a notehead, 8 of them <code>4.~16.</code> (15/32): one notehead with three dots,
+two with at most two dots.</li></ul>
+<p><strong>What the regular expressions read and miss</strong> (<code>bin/tie-scan</code>'s docstring has the full list; these
+move the counts):</p>
+<ul><li>It reads text, not LilyPond: no <code>\include</code> is followed, no variable or Scheme expression is
+evaluated, <code>\repeat unfold</code> bodies count once.</li><li>A chain is the same pitch name (octave marks dropped, since <code>\relative</code> drops them) joined by <code>~</code>,
+in source order. In <code>&lt;&lt; ... \\ ... &gt;&gt;</code> the voices are read one after the other, so a chain is lost
+where the other voice's notes fall between two tied notes.</li><li>A bare duration (<code>1~ 2</code>) takes the last pitch; one that follows a rest, or starts a file, ties to
+nothing, so Eris-style <code>{ 1~ 2 r }</code> after a rest is missed.</li><li><code>~</code> inside a chord, <code>\repeatTie</code>, <code>\laissezVibrer</code>, <code>\afterGrace</code>, and notes written as <code>q</code> are not read.</li><li>Pitch-like words in lyrics or markup outside strings may be read as notes; each matters only next to a <code>~</code>.</li><li>The metre tracker loses its place in <code>\repeat volta</code> with <code>\alternative</code>, <code>\partial</code> inside voices and
+<code>\cadenza</code>, so the bar cuts are right only in the 4 verified files.</li><li>0 tuplet chains were found, which is a count, not a proof there are none: <code>\tuplet</code> is read only
+in the forms <code>\tuplet n/m {</code>, <code>\times n/m {</code>, <code>\scaleDurations n/m {</code>.</li><li>"Machine-built" is decided by path (film-b, <code>check-2023/pitches</code>) or a header ("WRITTEN BY",
+"Agent-derived"); a hand-written file that looks machine-built, or the reverse, shifts the split.
+The Eris charts (<code>portfolio/eris/</code>) and the <code>abc/</code> cues are counted as not generated; the
+<code>abc/1m2.ily</code> header calls itself "Pure musical data"; whether the <code>abc/</code> cues are transcriptions
+of recordings I did not check.</li></ul>
+<h4>2b. A quantised performance (<code>bin/tie-scan tsv</code>)</h4>
+<p>What exists: no MIDI is <em>input</em> to his pipeline in the repo (the one <code>.mid</code>,
+<code>portfolio/film-b/plunge-stitch-v4-water-stitch.mid</code>, is written <em>by</em> <code>bin/plunge/transcribe.py</code> from
+the same notes the TSV lists, so it adds nothing). What does exist is the pipeline's own timing
+tables, from his recordings: the audio-to-MIDI transcription of the film-b water clips, and the sung
+held tones of Total Abstraction 2023-10-21. Nothing here is synthesised; the command reads those TSVs.</p>
+<p>Method: onset and offset in seconds, converted to a fraction of a whole note at quarter = 60 (a whole
+note is 4 s, the repo's own grid note in <code>plunge-stitch-v4-water-score.ly</code>: "an eighth at quarter =
+60"), quantised to 1/32 and to 1/48 of a whole note. An inter-onset interval is next onset minus
+this onset within one part (onsets on one grid point merged); a note length is offset minus onset.
+"Need a tie" = more than one block (b &gt;= 2). On the 1/48 grid most values land on a triplet and are
+not dyadic (corollary 1a: no tie reaches them); they are counted apart and not tied here, so the
+1/48 rows below are the dyadic remainder only.</p>
+<p>    bin/tie-scan tsv portfolio/film-b/plunge-stitch-v4-water-notes.tsv --in out_in --out out_out --group part --where spill=0 --mode ioi
+    bin/tie-scan tsv portfolio/film-b/plunge-stitch-v4-water-notes.tsv --in out_in --out out_out --group part --where spill=0 --mode dur
+    bin/tie-scan tsv portfolio/siddhartha-2023/check-2023/pitches/tones.tsv --in t_in --out t_out --mode dur</p>
+<table><thead><tr><th>data</th><th>grid</th><th>durations</th><th>dyadic</th><th>need a tie</th><th>binary tie beaten (T &lt; b)</th><th>beaten even with 2 dots (T2 &lt; b)</th></tr></thead><tbody><tr><td>film-b notes (788 non-spill), inter-onset, per part</td><td>1/32</td><td>516</td><td>516</td><td>83</td><td>3</td><td>1</td></tr><tr><td>film-b notes, inter-onset</td><td>1/48</td><td>562</td><td>148</td><td>20</td><td>0</td><td>0</td></tr><tr><td>film-b notes, note length</td><td>1/32</td><td>787</td><td>787</td><td>161</td><td>14</td><td>3</td></tr><tr><td>film-b notes, note length</td><td>1/48</td><td>788</td><td>290</td><td>25</td><td>1</td><td>0</td></tr><tr><td>sung tones (166), note length</td><td>1/32</td><td>166</td><td>166</td><td>132</td><td>25</td><td>9</td></tr><tr><td>sung tones, note length</td><td>1/48</td><td>166</td><td>31</td><td>26</td><td>7</td><td>3</td></tr><tr><td>sung tones, inter-onset (one staff)</td><td>1/32</td><td>150</td><td>150</td><td>50</td><td>5</td><td>0</td></tr></tbody></table>
+<p>Read: of the durations that need a tie, the binary tie is beaten by a shortest tie in about 4% (3 of</p>
+<ol><li>to 19% (25 of 132) of cases at the 1/32 grid, and each beating saves one notehead (the saved</li></ol>
+<p>column equals the count in every row). These are durations, not barline-cut ties: no meter was
+applied, so a real score would cut some of them at bar lines. "Beaten even with 2 dots" counts
+durations where the shortest tie within 2 dots is still shorter than the binary tie, whatever its
+dots; that is a floor on the effect under a dots limit, not the unbounded count.</p>
+<p>Limits: the quarter = 60 grid is the repo's choice for these scores, not a measurement; the notes
+TSV is the output of a pitch tracker, so its onsets carry its errors (frames of 171 ms every 21 ms);
+a note's written duration is normally its inter-onset interval with a rest after it, which the
+<code>dur</code> mode does not model; the tones file is one board recording, and <code>inter-onset</code> over overlapping
+tones is only meaningful for one staff.</p>
+<h3>3. Worked examples (LilyPond, compiled)</h3>
+<p><code>writing/duration/practical/practical.ly</code>, compiled with LilyPond 2.24.4 (installed here) by
+<code>lilypond --png -dcrop -dresolution=130 -o writing/duration/practical/practical writing/duration/practical/practical.ly</code>
+to <code>writing/duration/practical/practical.png</code>. Each line below is <code>bin/tie-min</code> output.</p>
+<p><img src="/apply/desk/practical.png" alt="practical.png, engraved by LilyPond from writing/duration/practical/practical.ly"></p>
+<ol><li>21/16: <code>c1~ c4~ c16</code> (3, what Abjad writes) against <code>c2...~ c4.</code> (2).</li><li>21/32 (<code>bin/tie-min --unit 1/32 21</code>), written <code>c2~ c32~ c8</code> at <code>act1-2023.ly:1235</code>: <code>c4...~ c8.</code> (2), or
+<code>c4..~ c8..</code> (2, within 2 dots).</li><li>43/32, written <code>c8.~ c32~ c1~ c8</code> at <code>after-ta-2023.ly:205</code> (4): binary <code>c1~ c4~ c16.</code> (3), shortest
+<code>c2....~ c4.</code> (2, four dots); within 2 dots the answer is 3.</li><li>15/32, written <code>c4.~ c16.</code> (2): <code>c4...</code> (1, three dots); within 2 dots <code>c4..~ c32</code> (2).</li><li>341/256: binary 5, shortest 3 (<code>c2.......~ c8....~ c16.</code>, seven dots on one head), within 2 dots 4
+(<code>c1~ c4~ c32..~ c64..</code>).</li></ol>
+<p>Example 4 is the instructive one: the notation program that writes 15/32 as two noteheads is
+following a dots limit; the same limit, applied by a shortest-tie tool, costs one notehead in 16 of
+the 455 chains here, which is the "bounded dots" case in section 4.</p>
+<h3>4. What would make this bite (a list; the work, not a sentence for the paper)</h3>
+<ol><li><strong>A dots bound.</strong> The theorems are unbounded; every real tool stops at two or three dots. The
+bounded version is <code>tie-min --max-dots N</code>, a search with no proof behind it. A theorem that is
+sharp under "at most N dots" (the binary tie splits each block of length L into ceil(L/(N+1))
+noteheads, so the bounded T is between that and the unbounded T) would be the result a tool
+author needs. 16 of 455 chains in 2a are where it matters.</li><li><strong>A metre.</strong> Most ties are forced by a bar line or a beat (<code>proof-notes.md</code> section 6). The
+scanner's bar-cut pass is the beginning: 141 of 455 chains cross a computed bar line. A beat model
+(4/4 does not tie across beat 3) would turn the "upper bound" count into a measured one.</li><li><strong>A pipeline that sums before it splits.</strong> The larger effect in the machine-built scores is the
+plain merge (179 of 378 chains are one notehead written as two or more; 243 have a shorter tie). A pipeline stage that
+takes a rounded duration and calls <code>tie-min</code> once is the whole of this case, and costs little:
+<code>shortest_runs</code> took about 70 microseconds per duration under 2^20 (2,000 random odd durations,
+timed once on this machine).</li><li><strong>A readability study.</strong> Does a reader prefer <code>c1~ c4~ c16</code> to <code>c2...~ c4.</code>? Nothing in the
+repo or the sources read says; question 1 of <code>proof-notes.md</code> section 8 is the same question to
+Zach. Without it "shortest" is a count, not a quality.</li><li><strong>More than Abjad and music21.</strong> The claim that notation programs tie by binary blocks or greedily
+is shown for those two. LilyPond's own splitting (barlines), MuseScore's importer (a forum post
+in <code>novelty.md</code> says it ties greedily; search-confirmed, not read), and Dorico and Sibelius
+(closed) were not read.</li><li><strong>His own pipeline's numbers.</strong> The grid choices (1/32, 1/48, quarter = 60) are mine; the real
+quantisation his pipeline would use is a decision of his.</li></ol>
+<h3>5. Where each number comes from</h3>
+<p>Commands in section 2 reproduce every table; <code>bin/tie-scan ly ... --json</code> gives the per-file counts.
+Run on 2026-11-27 against the worktree and <code>/mnt/d/gardien-media/mandark/Documents/</code> (read-only).</p>
+<p><a href="/apply/desk/">Desk</a></p>
+<p id=up-links><a href="/apply/">Apply</a> · <a href="/apply/files.html">All files</a></p>
+</body>
+</html>

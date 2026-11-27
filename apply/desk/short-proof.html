@@ -1,0 +1,78 @@
+<html xmlns:mo="http://purl.org/ontology/mo/">
+<head>
+	<meta name="robots" content="noindex">
+	<style>blockquote { line-height: 1.6; margin: 1em 0 } h3 { margin-top: 1.5em }</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=stylesheet href=/style.css>
+	<style>table { border-collapse: collapse; font-size: .85em; display: block; overflow-x: auto } td, th { border: 1px solid #ccc; padding: .2em .5em; vertical-align: top } pre { white-space: pre-wrap; overflow-wrap: anywhere } img { max-width: 100% } button { font: inherit; margin-bottom: .5em }</style>
+</head>
+<body typeof="mo:MusicArtist">
+	<header>
+	<link rel=stylesheet href=/header.css>
+	<h1 property="name">
+		<a href="/">Zachary Viet Pine</a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/bio/">bio</a></li> 
+			<li><a href="/compositions/">compositions</a></li> 
+			<!-- <li><a href="/sousaphone/">sousaphone</a></li> -->
+			<!-- <li><a href="/arrangements/">arrangements</a></li> -->
+			<!-- <li><a href="/band/">string band</a></li> -->
+			<li><a href="/cv/">cv</a></li>
+		</ul>
+	</nav>
+</header>
+	<h1>One short proof (AGENT-WRITTEN, not Zach's words)</h1>
+<p id=draft-note>Agent-written working material, not Zach's prose. Rendered from writing/duration/short-proof.md at 7a256d0, 2026-11-27. Nothing here is submitted.</p>
+<p>Agent-written, 2026-11-27, answering Zach's ask (chat, 2026-11-27): "look into how we might be able to
+simplify the math and duration claim in another approach. basically one elegant proof, modest, short".
+This is the whole result of <code>proof-notes.md</code> cut to what a music paper needs, with a new, shorter proof of
+the bound (the transition count replaces the carry and borrow case analysis of Lemmas A and B). No sentence
+here is a sentence for his paper. Checked by brute force: the one-step claim below holds for every x &lt; 2^14
+and every power of two up to 2^15 (<code>scratchpad/beta.py</code>, 2026-11-27).</p>
+<h3>Setting</h3>
+<p>Measure every duration in units of one reference note (his "note that we have no opinions about"), and
+write it in binary. The procedures of his draft then read off the digits:</p>
+<ul><li>a halving (stem, filled head, flag) shifts the digits one place to the right;</li><li>the n-th dot adds half of what the dot before it added, so a note of value 2^e with n dots lasts
+2^e + 2^(e-1) + ... + 2^(e-n) = 2^(e+1) - 2^(e-n): binary 1s on exactly the positions e-n, ..., e;</li><li>a tie adds durations, digit by digit, with carries.</li></ul>
+<h3>Theorem 1 (one notehead)</h3>
+<p>A duration can be written with a single notehead if and only if its binary digits form one unbroken run
+of 1s. The notehead is then unique: its value is the highest 1, its number of dots is the length of the
+run minus one.</p>
+<p><em>Proof.</em> The sum above is a run of 1s. Conversely a run on positions c, ..., a-1 is the note of value
+2^(a-1) with a-1-c dots. Binary expansions are unique. ∎</p>
+<p>So the single-notehead durations are exactly the numbers whose odd part is 1, 3, 7, 15, ... (one less than
+a power of two). 3/4 and 7/16 are one notehead; 5/4, 9/8 and 21/16 are not. This is the 2023 abstract's
+sentence made exact: "The durations which can be notated with a single notehead are limited to a strict
+subset of rational numbers."</p>
+<h3>Theorem 2 (ties)</h3>
+<p>Let a duration have b runs of 1s. It can be written with b tied noteheads (one per run), and with no fewer
+than (b+1)/2, rounded up. Both ends are reached.</p>
+<p><em>The upper end.</em> One notehead per run, by Theorem 1.</p>
+<p><em>The lower end.</em> Call a <em>transition</em> a place where two adjacent binary digits differ, counting a 0 on
+either side of the number. A positive number with b runs has exactly 2b transitions. A notehead is a run,
+2^a - 2^c: adding one to a tie means adding 2^a and then subtracting 2^c.</p>
+<p>Claim: adding or subtracting one power of two changes the number of transitions by at most 2.
+Adding 2^a when digit a is 0 flips that one digit, and only the two adjacencies touching it can change.
+When digit a is 1, the 1s from position a up to the first 0 above it (at g) become 0s and that 0 becomes
+a 1: inside the stretch the digits stay equal to their neighbours, the adjacency between g-1 and g differs
+before and after, and only the two adjacencies at the ends of the stretch (a-1 | a and g | g+1) can change.
+Subtracting is the same with 0 and 1 exchanged. So each notehead adds at most 4 transitions. The first
+notehead alone has exactly 2. Hence k noteheads give at most 4k - 2 transitions, that is at most 2k - 1
+runs, and a duration with b runs needs k &gt;= (b+1)/2. ∎</p>
+<p><em>Both ends are reached.</em> 21/16 = 1.0101 has three runs and two noteheads suffice: 15/16 + 6/16, a
+triple-dotted half tied to a dotted quarter (the carries fill the gaps). In general the alternating pattern
+1 0 1 0 ... 1 with 2q+1 ones is the sum of q+1 runs: for 341/256 = 1.01010101 (five runs), 255 + 62 + 24
+in 256ths, three noteheads. On the other side, 819/256 = 11.00110011 (three runs, every run and every gap
+two long) needs all three; the general statement and proof are Theorem C in <code>proof-notes.md</code>.</p>
+<h3>What this buys, and what it leaves out</h3>
+<ul><li>One page: the single-notehead law, the fact that the obvious tie is not always the shortest, and the
+exact limit of how much shorter a tie can be (never below half). That is the modest claim; it needs no
+machinery beyond binary digits and carries.</li><li>Left for an appendix, if wanted: the exact minimum and the algorithm that finds it (Theorem P), which
+two-notehead ties exist (Theorem 2 there), and how long gaps limit the saving (Theorem H).</li><li>The music reading is his to write: flags shift, dots extend the run, ties add with carries; the record of
+procedures is the binary string.</li></ul>
+<p><a href="/apply/desk/">Desk</a></p>
+<p id=up-links><a href="/apply/">Apply</a> · <a href="/apply/files.html">All files</a></p>
+</body>
+</html>
